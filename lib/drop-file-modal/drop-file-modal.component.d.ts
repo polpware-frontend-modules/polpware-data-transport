@@ -1,6 +1,7 @@
 import { OnInit } from '@angular/core';
 import { ObservableModalAbstractComponent } from '@polpware/bs-components';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { NgxFileDropEntry } from 'ngx-file-drop';
 import * as i0 from "@angular/core";
 export interface IModalInput {
     multiple?: boolean;
@@ -19,12 +20,10 @@ export declare class DropFileModalComponent extends ObservableModalAbstractCompo
     maxFileSizeInBytes: number;
     constructor(bsModalRef: BsModalRef, bsModalService: BsModalService);
     ngOnInit(): void;
-    onSelect(event: {
-        addedFiles: File[];
-    }): void;
+    onSelect(files: NgxFileDropEntry[]): void;
     onRemove(event: File): void;
     confirm(): void;
     close(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DropFileModalComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DropFileModalComponent, "polp-drop-file-modal", never, { "multiple": "multiple"; "accept": "accept"; "maxFileSizeInBytes": "maxFileSizeInBytes"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DropFileModalComponent, "polp-drop-file-modal", never, { "multiple": "multiple"; "accept": "accept"; "maxFileSizeInBytes": "maxFileSizeInBytes"; }, {}, never, never, false>;
 }

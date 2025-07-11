@@ -1,5 +1,5 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { DefaultFormBaseComponent } from '@polpware/ngx-form-common';
 import { LoggerProviderImpl } from '@polpware/ngx-logger';
 import * as i0 from "@angular/core";
@@ -18,14 +18,14 @@ export declare class DefineColumnMappingComponent extends DefaultFormBaseCompone
         sourceId: string;
         targetId: string;
     }>;
-    form: FormGroup;
+    form: UntypedFormGroup;
     private _subr;
     private readonly _logger;
-    constructor(_builder: FormBuilder, loggerProvider: LoggerProviderImpl);
-    get mappings(): FormArray;
+    constructor(_builder: UntypedFormBuilder, loggerProvider: LoggerProviderImpl);
+    get mappings(): UntypedFormArray;
     ngOnInit(): void;
     ngOnDestroy(): void;
     sourceLabel(i: number): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<DefineColumnMappingComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DefineColumnMappingComponent, "polp-define-column-mapping", never, { "sourceColumns": "sourceColumns"; "targetColumns": "targetColumns"; "initValue": "initValue"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DefineColumnMappingComponent, "polp-define-column-mapping", never, { "sourceColumns": "sourceColumns"; "targetColumns": "targetColumns"; "initValue": "initValue"; }, {}, never, never, false>;
 }

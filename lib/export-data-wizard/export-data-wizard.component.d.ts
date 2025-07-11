@@ -37,6 +37,6 @@ export declare class ExportDataWizardComponent extends WizardAbstractComponent i
     exportDataAsync(): Promise<void>;
     invokeDownloadAsync(): Promise<any[]>;
     static ɵfac: i0.ɵɵFactoryDeclaration<ExportDataWizardComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ExportDataWizardComponent, "polp-export-data-wizard", never, { "columns": "columns"; "downloadAsync": "downloadAsync"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ExportDataWizardComponent, "polp-export-data-wizard", never, { "columns": "columns"; "downloadAsync": "downloadAsync"; }, {}, never, never, false>;
 }
 export {};

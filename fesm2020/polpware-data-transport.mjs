@@ -1,33 +1,33 @@
 import * as i0 from '@angular/core';
 import { Component, Input, ViewChild, EventEmitter, Output, Injectable, NgModule } from '@angular/core';
 import { NgxDatatablePoweredBase, getInputType, NgxDatatableLocalData, supportOperationsDecorator, sliceArray } from '@polpware/ngx-reactive-table';
-import * as i5 from '@swimlane/ngx-datatable';
+import * as i1 from '@swimlane/ngx-datatable';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { __decorate } from 'tslib';
 import { faEdit, faTrash, faCheck, faTimes, faPlus, faUndo, faExclamationTriangle, faSearch, faHourglass, faArrowCircleUp, faArrowUp, faSave, faChevronRight, faArrowLeft, faArrowRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { ReplaySubject, lastValueFrom } from 'rxjs';
-import * as i1 from '@polpware/ngx-noty';
-import * as i2 from '@fortawesome/angular-fontawesome';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import * as i3 from '@polpware/bs-components';
-import { ObservableModalAbstractComponent, PromptModalComponent, PolpBsComponentsModule } from '@polpware/bs-components';
-import * as i4 from 'ngx-log-monitor';
-import { LogMonitorModule } from 'ngx-log-monitor';
-import * as i6 from '@angular/common';
+import * as i1$1 from '@polpware/ngx-noty';
+import * as i2 from '@angular/common';
 import { CommonModule } from '@angular/common';
-import * as i7 from 'ngx-bootstrap/popover';
+import * as i3 from 'ngx-bootstrap/popover';
 import { PopoverModule } from 'ngx-bootstrap/popover';
+import * as i4 from '@polpware/bs-components';
+import { ObservableModalAbstractComponent, PromptModalComponent, PolpBsComponentsModule } from '@polpware/bs-components';
+import * as i5 from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import * as i7 from 'ngx-log-monitor';
+import { LogMonitorModule } from 'ngx-log-monitor';
 import { DefaultFormBaseComponent } from '@polpware/ngx-form-common';
-import * as i1$1 from '@angular/forms';
+import * as i1$2 from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import * as i2$1 from '@polpware/ngx-logger';
 import * as i4$1 from '@polpware/ngx-pipes';
 import { PolpwareNgxPipesModule } from '@polpware/ngx-pipes';
-import * as i1$2 from 'ngx-bootstrap/modal';
+import * as i1$3 from 'ngx-bootstrap/modal';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import * as i2$2 from 'ngx-dropzone';
-import { NgxDropzoneModule } from 'ngx-dropzone';
-import * as i3$1 from '@polpware/modal-directives';
+import * as i3$1 from 'ngx-file-drop';
+import { NgxFileDropModule } from 'ngx-file-drop';
+import * as i2$2 from '@polpware/modal-directives';
 import { PolpDraggableModule } from '@polpware/modal-directives';
 import { safeParseBool, guid } from '@polpware/fe-utilities';
 import { WizardAbstractComponent } from '@polpware/ngx-wizard';
@@ -35,6 +35,14 @@ import readXlsxFile from 'read-excel-file';
 import writeXlsxFile from 'write-excel-file';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 
+const _c0$3 = ["datatable"];
+const _c1$2 = ["titleCell"];
+function DataPreviewComponent_ng_template_4_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelement(0, "div", 5);
+} if (rf & 2) {
+    const column_r3 = ctx.column;
+    i0.ɵɵproperty("innerHTML", column_r3.name, i0.ɵɵsanitizeHtml);
+} }
 class DataPreviewComponent extends NgxDatatablePoweredBase {
     constructor() {
         super();
@@ -73,23 +81,192 @@ class DataPreviewComponent extends NgxDatatablePoweredBase {
         this.rows = this.initData;
     }
 }
-DataPreviewComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DataPreviewComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-DataPreviewComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.12", type: DataPreviewComponent, selector: "polp-data-preview", inputs: { initData: "initData", columnNames: "columnNames" }, viewQueries: [{ propertyName: "datatable", first: true, predicate: ["datatable"], descendants: true, static: true }, { propertyName: "titleCellTmpl", first: true, predicate: ["titleCell "], descendants: true, static: true }], usesInheritance: true, usesOnChanges: true, ngImport: i0, template: "<div class=\"card\">\n    <div class=\"card-body\">\n        <ngx-datatable class=\"bootstrap\" #datatable\n                       [rows]=\"rows\"\n                       [columns]=\"columns\"\n                       [columnMode]=\"ColumnMode.force\"\n                       headerHeight=\"auto\"\n                       [footerHeight]=\"50\"\n                       rowHeight=\"auto\"\n                       [limit]=\"pageSize\"\n                       [scrollbarH]=\"true\">\n        </ngx-datatable>\n\n        <ng-template #titleHeader let-column=\"column\">\n            <div [innerHTML]=\"column.name\" class=\"fw-bold text-wrap\"></div>\n        </ng-template>\n    </div>\n</div>\n", styles: [""], components: [{ type: i5.DatatableComponent, selector: "ngx-datatable", inputs: ["targetMarkerTemplate", "rows", "groupRowsBy", "groupedRows", "columns", "selected", "scrollbarV", "scrollbarH", "rowHeight", "columnMode", "headerHeight", "footerHeight", "externalPaging", "externalSorting", "limit", "count", "offset", "loadingIndicator", "selectionType", "reorderable", "swapColumns", "sortType", "sorts", "cssClasses", "messages", "rowClass", "selectCheck", "displayCheck", "groupExpansionDefault", "trackByProp", "selectAllRowsOnPage", "virtualization", "treeFromRelation", "treeToRelation", "summaryRow", "summaryHeight", "summaryPosition", "rowIdentity"], outputs: ["scroll", "activate", "select", "sort", "page", "reorder", "resize", "tableContextmenu", "treeAction"] }] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DataPreviewComponent, decorators: [{
-            type: Component,
-            args: [{ selector: 'polp-data-preview', template: "<div class=\"card\">\n    <div class=\"card-body\">\n        <ngx-datatable class=\"bootstrap\" #datatable\n                       [rows]=\"rows\"\n                       [columns]=\"columns\"\n                       [columnMode]=\"ColumnMode.force\"\n                       headerHeight=\"auto\"\n                       [footerHeight]=\"50\"\n                       rowHeight=\"auto\"\n                       [limit]=\"pageSize\"\n                       [scrollbarH]=\"true\">\n        </ngx-datatable>\n\n        <ng-template #titleHeader let-column=\"column\">\n            <div [innerHTML]=\"column.name\" class=\"fw-bold text-wrap\"></div>\n        </ng-template>\n    </div>\n</div>\n", styles: [""] }]
-        }], ctorParameters: function () { return []; }, propDecorators: { initData: [{
-                type: Input
-            }], columnNames: [{
-                type: Input
-            }], datatable: [{
-                type: ViewChild,
-                args: ['datatable', { static: true }]
-            }], titleCellTmpl: [{
-                type: ViewChild,
-                args: ["titleCell ", { static: true }]
-            }] } });
+DataPreviewComponent.ɵfac = function DataPreviewComponent_Factory(t) { return new (t || DataPreviewComponent)(); };
+DataPreviewComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: DataPreviewComponent, selectors: [["polp-data-preview"]], viewQuery: function DataPreviewComponent_Query(rf, ctx) { if (rf & 1) {
+        i0.ɵɵviewQuery(_c0$3, 7);
+        i0.ɵɵviewQuery(_c1$2, 7);
+    } if (rf & 2) {
+        let _t;
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.datatable = _t.first);
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.titleCellTmpl = _t.first);
+    } }, inputs: { initData: "initData", columnNames: "columnNames" }, features: [i0.ɵɵInheritDefinitionFeature, i0.ɵɵNgOnChangesFeature], decls: 6, vars: 6, consts: [[1, "card"], [1, "card-body"], ["headerHeight", "auto", "rowHeight", "auto", 1, "bootstrap", 3, "rows", "columns", "columnMode", "footerHeight", "limit", "scrollbarH"], ["datatable", ""], ["titleHeader", ""], [1, "fw-bold", "text-wrap", 3, "innerHTML"]], template: function DataPreviewComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "div", 0)(1, "div", 1);
+        i0.ɵɵelement(2, "ngx-datatable", 2, 3);
+        i0.ɵɵtemplate(4, DataPreviewComponent_ng_template_4_Template, 1, 1, "ng-template", null, 4, i0.ɵɵtemplateRefExtractor);
+        i0.ɵɵelementEnd()();
+    } if (rf & 2) {
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("rows", ctx.rows)("columns", ctx.columns)("columnMode", ctx.ColumnMode.force)("footerHeight", 50)("limit", ctx.pageSize)("scrollbarH", true);
+    } }, dependencies: [i1.DatatableComponent] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DataPreviewComponent, [{
+        type: Component,
+        args: [{ selector: 'polp-data-preview', template: "<div class=\"card\">\n    <div class=\"card-body\">\n        <ngx-datatable class=\"bootstrap\" #datatable\n                       [rows]=\"rows\"\n                       [columns]=\"columns\"\n                       [columnMode]=\"ColumnMode.force\"\n                       headerHeight=\"auto\"\n                       [footerHeight]=\"50\"\n                       rowHeight=\"auto\"\n                       [limit]=\"pageSize\"\n                       [scrollbarH]=\"true\">\n        </ngx-datatable>\n\n        <ng-template #titleHeader let-column=\"column\">\n            <div [innerHTML]=\"column.name\" class=\"fw-bold text-wrap\"></div>\n        </ng-template>\n    </div>\n</div>\n" }]
+    }], function () { return []; }, { initData: [{
+            type: Input
+        }], columnNames: [{
+            type: Input
+        }], datatable: [{
+            type: ViewChild,
+            args: ['datatable', { static: true }]
+        }], titleCellTmpl: [{
+            type: ViewChild,
+            args: ["titleCell ", { static: true }]
+        }] }); })();
 
+const _c0$2 = ["searchBox"];
+const _c1$1 = ["datatable"];
+const _c2$1 = ["editActionHeader"];
+const _c3$1 = ["editActionCell"];
+const _c4$1 = ["inputCell"];
+function DataProcessorComponent_div_2_button_2_Template(rf, ctx) { if (rf & 1) {
+    const _r16 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 23);
+    i0.ɵɵlistener("click", function DataProcessorComponent_div_2_button_2_Template_button_click_0_listener() { i0.ɵɵrestoreView(_r16); const ctx_r15 = i0.ɵɵnextContext(2); return i0.ɵɵresetView(ctx_r15.startAdd()); });
+    i0.ɵɵelement(1, "fa-icon", 21);
+    i0.ɵɵtext(2, " Add ");
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r11 = i0.ɵɵnextContext(2);
+    i0.ɵɵproperty("disabled", ctx_r11.selected.length > 0 || ctx_r11.anyEditing);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("icon", ctx_r11.faPlus);
+} }
+function DataProcessorComponent_div_2_button_3_Template(rf, ctx) { if (rf & 1) {
+    const _r18 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 24);
+    i0.ɵɵlistener("click", function DataProcessorComponent_div_2_button_3_Template_button_click_0_listener() { i0.ɵɵrestoreView(_r18); const ctx_r17 = i0.ɵɵnextContext(2); return i0.ɵɵresetView(ctx_r17.rmAsync()); });
+    i0.ɵɵelement(1, "fa-icon", 21);
+    i0.ɵɵtext(2, " Delete ");
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r12 = i0.ɵɵnextContext(2);
+    i0.ɵɵproperty("disabled", ctx_r12.selected.length <= 0);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("icon", ctx_r12.faTrash);
+} }
+function DataProcessorComponent_div_2_ng_template_8_Template(rf, ctx) { if (rf & 1) {
+    const _r20 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 25);
+    i0.ɵɵtext(1, " This operation will discard all changes and cannot be undo. Are you sure to continue? ");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(2, "div")(3, "button", 26);
+    i0.ɵɵlistener("click", function DataProcessorComponent_div_2_ng_template_8_Template_button_click_3_listener() { i0.ɵɵrestoreView(_r20); const ctx_r19 = i0.ɵɵnextContext(2); return i0.ɵɵresetView(ctx_r19.isConfirmReset = false); });
+    i0.ɵɵelement(4, "fa-icon", 21);
+    i0.ɵɵtext(5, " Cancel ");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(6, "button", 27);
+    i0.ɵɵlistener("click", function DataProcessorComponent_div_2_ng_template_8_Template_button_click_6_listener() { i0.ɵɵrestoreView(_r20); const ctx_r21 = i0.ɵɵnextContext(2); ctx_r21.isConfirmReset = false; return i0.ɵɵresetView(ctx_r21.reset()); });
+    i0.ɵɵelement(7, "fa-icon", 21);
+    i0.ɵɵtext(8, " Confirm ");
+    i0.ɵɵelementEnd()();
+} if (rf & 2) {
+    const ctx_r14 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance(4);
+    i0.ɵɵproperty("icon", ctx_r14.faTimes);
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("icon", ctx_r14.faExclamationTriangle);
+} }
+function DataProcessorComponent_div_2_Template(rf, ctx) { if (rf & 1) {
+    const _r23 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 15)(1, "div", 16);
+    i0.ɵɵtemplate(2, DataProcessorComponent_div_2_button_2_Template, 3, 2, "button", 17);
+    i0.ɵɵtemplate(3, DataProcessorComponent_div_2_button_3_Template, 3, 2, "button", 18);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(4, "div", 19)(5, "button", 20);
+    i0.ɵɵlistener("click", function DataProcessorComponent_div_2_Template_button_click_5_listener() { i0.ɵɵrestoreView(_r23); const ctx_r22 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r22.isConfirmReset = true); });
+    i0.ɵɵelement(6, "fa-icon", 21);
+    i0.ɵɵtext(7, " Reset ");
+    i0.ɵɵelementEnd()();
+    i0.ɵɵtemplate(8, DataProcessorComponent_div_2_ng_template_8_Template, 9, 2, "ng-template", null, 22, i0.ɵɵtemplateRefExtractor);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const _r13 = i0.ɵɵreference(9);
+    const ctx_r0 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("ngIf", ctx_r0.settings.canCreate);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngIf", ctx_r0.settings.canDelete);
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("popover", _r13)("isOpen", ctx_r0.isConfirmReset)("disabled", ctx_r0.selected.length > 0 || ctx_r0.anyEditing);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("icon", ctx_r0.faUndo);
+} }
+function DataProcessorComponent_ng_template_12_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelement(0, "div", 28);
+} if (rf & 2) {
+    const column_r24 = ctx.column;
+    i0.ɵɵproperty("innerHTML", column_r24.name, i0.ɵɵsanitizeHtml);
+} }
+function DataProcessorComponent_ng_template_14_span_0_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelement(0, "span", 31);
+} if (rf & 2) {
+    const value_r28 = i0.ɵɵnextContext().value;
+    i0.ɵɵproperty("innerHTML", value_r28, i0.ɵɵsanitizeHtml);
+} }
+function DataProcessorComponent_ng_template_14_input_1_Template(rf, ctx) { if (rf & 1) {
+    const _r34 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "input", 32);
+    i0.ɵɵlistener("blur", function DataProcessorComponent_ng_template_14_input_1_Template_input_blur_0_listener($event) { i0.ɵɵrestoreView(_r34); const ctx_r33 = i0.ɵɵnextContext(); const column_r27 = ctx_r33.column; const rowIndex_r25 = ctx_r33.rowIndex; const ctx_r32 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r32.updateValue($event, column_r27.prop, rowIndex_r25)); });
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r35 = i0.ɵɵnextContext();
+    const column_r27 = ctx_r35.column;
+    const value_r28 = ctx_r35.value;
+    i0.ɵɵproperty("type", column_r27.inputType)("value", value_r28);
+} }
+function DataProcessorComponent_ng_template_14_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵtemplate(0, DataProcessorComponent_ng_template_14_span_0_Template, 1, 1, "span", 29);
+    i0.ɵɵtemplate(1, DataProcessorComponent_ng_template_14_input_1_Template, 1, 2, "input", 30);
+} if (rf & 2) {
+    const rowIndex_r25 = ctx.rowIndex;
+    const column_r27 = ctx.column;
+    const ctx_r6 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("ngIf", !ctx_r6.editing[rowIndex_r25 + "-" + column_r27.prop]);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngIf", ctx_r6.editing[rowIndex_r25 + "-" + column_r27.prop]);
+} }
+function DataProcessorComponent_ng_template_16_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span");
+    i0.ɵɵtext(1, " Actions ");
+    i0.ɵɵelementEnd();
+} }
+function DataProcessorComponent_ng_template_18_button_0_Template(rf, ctx) { if (rf & 1) {
+    const _r42 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 35);
+    i0.ɵɵlistener("click", function DataProcessorComponent_ng_template_18_button_0_Template_button_click_0_listener() { i0.ɵɵrestoreView(_r42); const rowIndex_r36 = i0.ɵɵnextContext().rowIndex; const ctx_r40 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r40.startEdit(rowIndex_r36)); });
+    i0.ɵɵelement(1, "fa-icon", 36);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r37 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("icon", ctx_r37.faEdit);
+} }
+function DataProcessorComponent_ng_template_18_ng_template_1_Template(rf, ctx) { if (rf & 1) {
+    const _r45 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 35);
+    i0.ɵɵlistener("click", function DataProcessorComponent_ng_template_18_ng_template_1_Template_button_click_0_listener() { i0.ɵɵrestoreView(_r45); const rowIndex_r36 = i0.ɵɵnextContext().rowIndex; const ctx_r43 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r43.confirmEditAsync(rowIndex_r36)); });
+    i0.ɵɵelement(1, "fa-icon", 36);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(2, "button", 37);
+    i0.ɵɵlistener("click", function DataProcessorComponent_ng_template_18_ng_template_1_Template_button_click_2_listener() { i0.ɵɵrestoreView(_r45); const rowIndex_r36 = i0.ɵɵnextContext().rowIndex; const ctx_r46 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r46.cancelEdit(rowIndex_r36)); });
+    i0.ɵɵelement(3, "fa-icon", 36);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r39 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("icon", ctx_r39.faCheck);
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("icon", ctx_r39.faTimes);
+} }
+function DataProcessorComponent_ng_template_18_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵtemplate(0, DataProcessorComponent_ng_template_18_button_0_Template, 2, 1, "button", 33);
+    i0.ɵɵtemplate(1, DataProcessorComponent_ng_template_18_ng_template_1_Template, 4, 2, "ng-template", null, 34, i0.ɵɵtemplateRefExtractor);
+} if (rf & 2) {
+    const rowIndex_r36 = ctx.rowIndex;
+    const _r38 = i0.ɵɵreference(2);
+    const ctx_r10 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("ngIf", !ctx_r10.backup[rowIndex_r36])("ngIfElse", _r38);
+} }
 let DataProcessorComponent = class DataProcessorComponent extends NgxDatatableLocalData {
     constructor(noty) {
         super();
@@ -246,39 +423,183 @@ let DataProcessorComponent = class DataProcessorComponent extends NgxDatatableLo
         this.dataChange.emit(Object.assign({}, event, { rows: this.originalRows }));
     }
 };
-DataProcessorComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DataProcessorComponent, deps: [{ token: i1.NgxNotyImpl }], target: i0.ɵɵFactoryTarget.Component });
-DataProcessorComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.12", type: DataProcessorComponent, selector: "polp-data-processor", inputs: { initData: "initData", columnNames: "columnNames" }, outputs: { dataChange: "dataChange", onReset: "onReset" }, viewQueries: [{ propertyName: "searchBox", first: true, predicate: ["searchBox"], descendants: true, static: true }, { propertyName: "datatable", first: true, predicate: ["datatable"], descendants: true, static: true }, { propertyName: "editActionHeaderTmpl", first: true, predicate: ["editActionHeader"], descendants: true, static: true }, { propertyName: "editActionCellTmpl", first: true, predicate: ["editActionCell "], descendants: true, static: true }, { propertyName: "inputCellTmpl", first: true, predicate: ["inputCell "], descendants: true, static: true }], usesInheritance: true, usesOnChanges: true, ngImport: i0, template: "<div class=\"card\">\n    <div class=\"card-body\">\n\n        <div class=\"btn-toolbar mb-4\" role=\"toolbar\" aria-label=\"Operations\" *ngIf=\"editable\">\n            <div class=\"btn-group me-2\" role=\"group\" aria-label=\"Update\">\n                <button class=\"btn btn-success\" role=\"button\" *ngIf=\"settings.canCreate\"\n                        (click)=\"startAdd()\" [disabled]=\"selected.length > 0 || anyEditing\">\n                    <fa-icon [icon]=\"faPlus\" class=\"me-1\"></fa-icon>\n                    Add\n                </button>\n                <button class=\"btn btn-danger\" role=\"button\" *ngIf=\"settings.canDelete\"\n                        (click)=\"rmAsync()\" [disabled]=\"selected.length <= 0\">\n                    <fa-icon [icon]=\"faTrash\" class=\"me-1\"></fa-icon>\n                    Delete\n                </button>\n            </div>\n            <div class=\"btn-group me-2\" role=\"group\" aria-label=\"Reset\">\n                <button class=\"btn btn-warning\" role=\"button\" (click)=\"isConfirmReset = true;\"\n                        [popover]=\"confirmResetTmpl\" triggers=\"\" [isOpen]=\"isConfirmReset\"\n                        container=\"body\" popoverTitle=\"Warning\"\n                        [disabled]=\"selected.length > 0 || anyEditing\">\n                    <fa-icon [icon]=\"faUndo\" class=\"me-1\"></fa-icon>\n                    Reset\n                </button>\n            </div>\n            <ng-template #confirmResetTmpl>\n                <div class=\"alert alert-warning\">\n                    This operation will discard all changes and cannot be undo. Are you sure to continue?\n                </div>\n                <div>\n                    <button class=\"btn btn-info me-2\" role=\"button\" (click)=\"isConfirmReset = false;\">\n                        <fa-icon [icon]=\"faTimes\" class=\"me-1\"></fa-icon>\n                        Cancel\n                    </button>\n                    <button class=\"btn btn-warning\" role=\"button\" (click)=\"isConfirmReset=false;reset();\">\n                        <fa-icon [icon]=\"faExclamationTriangle\" class=\"me-1\"></fa-icon>\n                        Confirm\n                    </button>\n                </div>\n            </ng-template>\n        </div>\n\n        <polp-bs-expandable-card [isCollapsed]=\"!showLogs\">\n            <span title>\n                Operation logs\n            </span>\n            <div class=\"container\" body>\n                <log-monitor\n                    [logStream]=\"logStream\"\n                    theme=\"dark\"\n                    title=\"Logs\"\n                    [animated]=\"true\"\n                    [icons]=\"true\">\n                </log-monitor>\n            </div>\n        </polp-bs-expandable-card>\n\n        <polp-bs-search-box-widget #searchBox\n                                   [debounceTime]=\"200\"\n                                   [minLength]=\"2\"\n                                   formClass=\"border rounded my-2 py-4 px-4 bg-light\"\n                                   (onSearch)=\"kickOffSearch()\">\n        </polp-bs-search-box-widget>\n\n        <ngx-datatable #datatable\n            class=\"bootstrap\"\n            [rows]=\"rows\"\n            [columns]=\"columns\"\n            [columnMode]=\"ColumnMode.force\"\n            headerHeight=\"auto\"\n            [footerHeight]=\"50\"\n            rowHeight=\"auto\"\n            [limit]=\"pageSize\"\n            [scrollbarH]=\"true\"\n            [selected]=\"selected\"\n            [selectionType]=\"SelectionType.checkbox\"\n            [selectAllRowsOnPage]=\"false\"\n            (select)=\"onSelect($event)\">\n        </ngx-datatable>\n\n        <ng-template #titleHeader let-column=\"column\">\n            <div [innerHTML]=\"column.name\" class=\"fw-bold text-wrap\"></div>\n        </ng-template>\n\n        <ng-template #inputCell let-rowIndex=\"rowIndex\" let-row=\"row\" let-column=\"column\" let-value=\"value\">\n            <span *ngIf=\"!editing[rowIndex + '-' + column.prop]\" [innerHTML]=\"value\">\n            </span>\n            <input autofocus\n                   *ngIf=\"editing[rowIndex + '-' + column.prop]\"\n                   [type]=\"column.inputType\"\n                   [value]=\"value\"\n                   (blur)=\"updateValue($event, column.prop, rowIndex)\"\n            />            \n        </ng-template>\n\n        <ng-template #editActionHeader>\n            <span>\n                Actions\n            </span>\n        </ng-template>\n\n        <ng-template #editActionCell let-rowIndex=\"rowIndex\">\n            <button class=\"btn btn-outline-primary icon-only\" role=\"button\" (click)=\"startEdit(rowIndex)\"\n                    *ngIf=\"!backup[rowIndex]; else otherActionTmpl\">\n                <fa-icon [icon]=\"faEdit\"></fa-icon>\n            </button>\n            <ng-template #otherActionTmpl>\n                <button class=\"btn btn-outline-primary icon-only\" role=\"button\" (click)=\"confirmEditAsync(rowIndex)\">\n                    <fa-icon [icon]=\"faCheck\"></fa-icon>\n                </button>\n                <button class=\"btn btn-outline-warning icon-only\" role=\"button\" (click)=\"cancelEdit(rowIndex)\">\n                    <fa-icon [icon]=\"faTimes\"></fa-icon>\n                </button>\n            </ng-template>\n        </ng-template>\n    </div>\n</div>\n", styles: [""], components: [{ type: i2.FaIconComponent, selector: "fa-icon", inputs: ["icon", "title", "spin", "pulse", "mask", "styles", "flip", "size", "pull", "border", "inverse", "symbol", "rotate", "fixedWidth", "classes", "transform", "a11yRole"] }, { type: i3.ExpandableCardComponent, selector: "polp-bs-expandable-card", inputs: ["isCollapsed", "titleClass"] }, { type: i4.LogMonitorComponent, selector: "log-monitor", inputs: ["delay", "history", "theme", "icons", "customClass", "animated", "title", "logStream"] }, { type: i3.SearchBoxWidgetComponent, selector: "polp-bs-search-box-widget", inputs: ["initKeyword", "formClass", "inputClass", "prependText", "debounceTime", "minLength"], outputs: ["onSearch"] }, { type: i5.DatatableComponent, selector: "ngx-datatable", inputs: ["targetMarkerTemplate", "rows", "groupRowsBy", "groupedRows", "columns", "selected", "scrollbarV", "scrollbarH", "rowHeight", "columnMode", "headerHeight", "footerHeight", "externalPaging", "externalSorting", "limit", "count", "offset", "loadingIndicator", "selectionType", "reorderable", "swapColumns", "sortType", "sorts", "cssClasses", "messages", "rowClass", "selectCheck", "displayCheck", "groupExpansionDefault", "trackByProp", "selectAllRowsOnPage", "virtualization", "treeFromRelation", "treeToRelation", "summaryRow", "summaryHeight", "summaryPosition", "rowIdentity"], outputs: ["scroll", "activate", "select", "sort", "page", "reorder", "resize", "tableContextmenu", "treeAction"] }], directives: [{ type: i6.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { type: i7.PopoverDirective, selector: "[popover]", inputs: ["adaptivePosition", "popover", "popoverContext", "popoverTitle", "placement", "outsideClick", "triggers", "container", "containerClass", "isOpen", "delay"], outputs: ["onShown", "onHidden"], exportAs: ["bs-popover"] }] });
+DataProcessorComponent.ɵfac = function DataProcessorComponent_Factory(t) { return new (t || DataProcessorComponent)(i0.ɵɵdirectiveInject(i1$1.NgxNotyImpl)); };
+DataProcessorComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: DataProcessorComponent, selectors: [["polp-data-processor"]], viewQuery: function DataProcessorComponent_Query(rf, ctx) { if (rf & 1) {
+        i0.ɵɵviewQuery(_c0$2, 7);
+        i0.ɵɵviewQuery(_c1$1, 7);
+        i0.ɵɵviewQuery(_c2$1, 7);
+        i0.ɵɵviewQuery(_c3$1, 7);
+        i0.ɵɵviewQuery(_c4$1, 7);
+    } if (rf & 2) {
+        let _t;
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.searchBox = _t.first);
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.datatable = _t.first);
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.editActionHeaderTmpl = _t.first);
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.editActionCellTmpl = _t.first);
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.inputCellTmpl = _t.first);
+    } }, inputs: { initData: "initData", columnNames: "columnNames" }, outputs: { dataChange: "dataChange", onReset: "onReset" }, features: [i0.ɵɵInheritDefinitionFeature, i0.ɵɵNgOnChangesFeature], decls: 20, vars: 16, consts: [[1, "card"], [1, "card-body"], ["class", "btn-toolbar mb-4", "role", "toolbar", "aria-label", "Operations", 4, "ngIf"], [3, "isCollapsed"], ["title", ""], ["body", "", 1, "container"], ["theme", "dark", "title", "Logs", 3, "logStream", "animated", "icons"], ["formClass", "border rounded my-2 py-4 px-4 bg-light", 3, "debounceTime", "minLength", "onSearch"], ["searchBox", ""], ["headerHeight", "auto", "rowHeight", "auto", 1, "bootstrap", 3, "rows", "columns", "columnMode", "footerHeight", "limit", "scrollbarH", "selected", "selectionType", "selectAllRowsOnPage", "select"], ["datatable", ""], ["titleHeader", ""], ["inputCell", ""], ["editActionHeader", ""], ["editActionCell", ""], ["role", "toolbar", "aria-label", "Operations", 1, "btn-toolbar", "mb-4"], ["role", "group", "aria-label", "Update", 1, "btn-group", "me-2"], ["class", "btn btn-success", "role", "button", 3, "disabled", "click", 4, "ngIf"], ["class", "btn btn-danger", "role", "button", 3, "disabled", "click", 4, "ngIf"], ["role", "group", "aria-label", "Reset", 1, "btn-group", "me-2"], ["role", "button", "triggers", "", "container", "body", "popoverTitle", "Warning", 1, "btn", "btn-warning", 3, "popover", "isOpen", "disabled", "click"], [1, "me-1", 3, "icon"], ["confirmResetTmpl", ""], ["role", "button", 1, "btn", "btn-success", 3, "disabled", "click"], ["role", "button", 1, "btn", "btn-danger", 3, "disabled", "click"], [1, "alert", "alert-warning"], ["role", "button", 1, "btn", "btn-info", "me-2", 3, "click"], ["role", "button", 1, "btn", "btn-warning", 3, "click"], [1, "fw-bold", "text-wrap", 3, "innerHTML"], [3, "innerHTML", 4, "ngIf"], ["autofocus", "", 3, "type", "value", "blur", 4, "ngIf"], [3, "innerHTML"], ["autofocus", "", 3, "type", "value", "blur"], ["class", "btn btn-outline-primary icon-only", "role", "button", 3, "click", 4, "ngIf", "ngIfElse"], ["otherActionTmpl", ""], ["role", "button", 1, "btn", "btn-outline-primary", "icon-only", 3, "click"], [3, "icon"], ["role", "button", 1, "btn", "btn-outline-warning", "icon-only", 3, "click"]], template: function DataProcessorComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "div", 0)(1, "div", 1);
+        i0.ɵɵtemplate(2, DataProcessorComponent_div_2_Template, 10, 6, "div", 2);
+        i0.ɵɵelementStart(3, "polp-bs-expandable-card", 3)(4, "span", 4);
+        i0.ɵɵtext(5, " Operation logs ");
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(6, "div", 5);
+        i0.ɵɵelement(7, "log-monitor", 6);
+        i0.ɵɵelementEnd()();
+        i0.ɵɵelementStart(8, "polp-bs-search-box-widget", 7, 8);
+        i0.ɵɵlistener("onSearch", function DataProcessorComponent_Template_polp_bs_search_box_widget_onSearch_8_listener() { return ctx.kickOffSearch(); });
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(10, "ngx-datatable", 9, 10);
+        i0.ɵɵlistener("select", function DataProcessorComponent_Template_ngx_datatable_select_10_listener($event) { return ctx.onSelect($event); });
+        i0.ɵɵelementEnd();
+        i0.ɵɵtemplate(12, DataProcessorComponent_ng_template_12_Template, 1, 1, "ng-template", null, 11, i0.ɵɵtemplateRefExtractor);
+        i0.ɵɵtemplate(14, DataProcessorComponent_ng_template_14_Template, 2, 2, "ng-template", null, 12, i0.ɵɵtemplateRefExtractor);
+        i0.ɵɵtemplate(16, DataProcessorComponent_ng_template_16_Template, 2, 0, "ng-template", null, 13, i0.ɵɵtemplateRefExtractor);
+        i0.ɵɵtemplate(18, DataProcessorComponent_ng_template_18_Template, 3, 2, "ng-template", null, 14, i0.ɵɵtemplateRefExtractor);
+        i0.ɵɵelementEnd()();
+    } if (rf & 2) {
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("ngIf", ctx.editable);
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("isCollapsed", !ctx.showLogs);
+        i0.ɵɵadvance(4);
+        i0.ɵɵproperty("logStream", ctx.logStream)("animated", true)("icons", true);
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("debounceTime", 200)("minLength", 2);
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("rows", ctx.rows)("columns", ctx.columns)("columnMode", ctx.ColumnMode.force)("footerHeight", 50)("limit", ctx.pageSize)("scrollbarH", true)("selected", ctx.selected)("selectionType", ctx.SelectionType.checkbox)("selectAllRowsOnPage", false);
+    } }, dependencies: [i2.NgIf, i3.PopoverDirective, i4.ExpandableCardComponent, i4.SearchBoxWidgetComponent, i5.FaIconComponent, i1.DatatableComponent, i7.LogMonitorComponent] });
 DataProcessorComponent = __decorate([
     supportOperationsDecorator
 ], DataProcessorComponent);
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DataProcessorComponent, decorators: [{
-            type: Component,
-            args: [{ selector: 'polp-data-processor', template: "<div class=\"card\">\n    <div class=\"card-body\">\n\n        <div class=\"btn-toolbar mb-4\" role=\"toolbar\" aria-label=\"Operations\" *ngIf=\"editable\">\n            <div class=\"btn-group me-2\" role=\"group\" aria-label=\"Update\">\n                <button class=\"btn btn-success\" role=\"button\" *ngIf=\"settings.canCreate\"\n                        (click)=\"startAdd()\" [disabled]=\"selected.length > 0 || anyEditing\">\n                    <fa-icon [icon]=\"faPlus\" class=\"me-1\"></fa-icon>\n                    Add\n                </button>\n                <button class=\"btn btn-danger\" role=\"button\" *ngIf=\"settings.canDelete\"\n                        (click)=\"rmAsync()\" [disabled]=\"selected.length <= 0\">\n                    <fa-icon [icon]=\"faTrash\" class=\"me-1\"></fa-icon>\n                    Delete\n                </button>\n            </div>\n            <div class=\"btn-group me-2\" role=\"group\" aria-label=\"Reset\">\n                <button class=\"btn btn-warning\" role=\"button\" (click)=\"isConfirmReset = true;\"\n                        [popover]=\"confirmResetTmpl\" triggers=\"\" [isOpen]=\"isConfirmReset\"\n                        container=\"body\" popoverTitle=\"Warning\"\n                        [disabled]=\"selected.length > 0 || anyEditing\">\n                    <fa-icon [icon]=\"faUndo\" class=\"me-1\"></fa-icon>\n                    Reset\n                </button>\n            </div>\n            <ng-template #confirmResetTmpl>\n                <div class=\"alert alert-warning\">\n                    This operation will discard all changes and cannot be undo. Are you sure to continue?\n                </div>\n                <div>\n                    <button class=\"btn btn-info me-2\" role=\"button\" (click)=\"isConfirmReset = false;\">\n                        <fa-icon [icon]=\"faTimes\" class=\"me-1\"></fa-icon>\n                        Cancel\n                    </button>\n                    <button class=\"btn btn-warning\" role=\"button\" (click)=\"isConfirmReset=false;reset();\">\n                        <fa-icon [icon]=\"faExclamationTriangle\" class=\"me-1\"></fa-icon>\n                        Confirm\n                    </button>\n                </div>\n            </ng-template>\n        </div>\n\n        <polp-bs-expandable-card [isCollapsed]=\"!showLogs\">\n            <span title>\n                Operation logs\n            </span>\n            <div class=\"container\" body>\n                <log-monitor\n                    [logStream]=\"logStream\"\n                    theme=\"dark\"\n                    title=\"Logs\"\n                    [animated]=\"true\"\n                    [icons]=\"true\">\n                </log-monitor>\n            </div>\n        </polp-bs-expandable-card>\n\n        <polp-bs-search-box-widget #searchBox\n                                   [debounceTime]=\"200\"\n                                   [minLength]=\"2\"\n                                   formClass=\"border rounded my-2 py-4 px-4 bg-light\"\n                                   (onSearch)=\"kickOffSearch()\">\n        </polp-bs-search-box-widget>\n\n        <ngx-datatable #datatable\n            class=\"bootstrap\"\n            [rows]=\"rows\"\n            [columns]=\"columns\"\n            [columnMode]=\"ColumnMode.force\"\n            headerHeight=\"auto\"\n            [footerHeight]=\"50\"\n            rowHeight=\"auto\"\n            [limit]=\"pageSize\"\n            [scrollbarH]=\"true\"\n            [selected]=\"selected\"\n            [selectionType]=\"SelectionType.checkbox\"\n            [selectAllRowsOnPage]=\"false\"\n            (select)=\"onSelect($event)\">\n        </ngx-datatable>\n\n        <ng-template #titleHeader let-column=\"column\">\n            <div [innerHTML]=\"column.name\" class=\"fw-bold text-wrap\"></div>\n        </ng-template>\n\n        <ng-template #inputCell let-rowIndex=\"rowIndex\" let-row=\"row\" let-column=\"column\" let-value=\"value\">\n            <span *ngIf=\"!editing[rowIndex + '-' + column.prop]\" [innerHTML]=\"value\">\n            </span>\n            <input autofocus\n                   *ngIf=\"editing[rowIndex + '-' + column.prop]\"\n                   [type]=\"column.inputType\"\n                   [value]=\"value\"\n                   (blur)=\"updateValue($event, column.prop, rowIndex)\"\n            />            \n        </ng-template>\n\n        <ng-template #editActionHeader>\n            <span>\n                Actions\n            </span>\n        </ng-template>\n\n        <ng-template #editActionCell let-rowIndex=\"rowIndex\">\n            <button class=\"btn btn-outline-primary icon-only\" role=\"button\" (click)=\"startEdit(rowIndex)\"\n                    *ngIf=\"!backup[rowIndex]; else otherActionTmpl\">\n                <fa-icon [icon]=\"faEdit\"></fa-icon>\n            </button>\n            <ng-template #otherActionTmpl>\n                <button class=\"btn btn-outline-primary icon-only\" role=\"button\" (click)=\"confirmEditAsync(rowIndex)\">\n                    <fa-icon [icon]=\"faCheck\"></fa-icon>\n                </button>\n                <button class=\"btn btn-outline-warning icon-only\" role=\"button\" (click)=\"cancelEdit(rowIndex)\">\n                    <fa-icon [icon]=\"faTimes\"></fa-icon>\n                </button>\n            </ng-template>\n        </ng-template>\n    </div>\n</div>\n", styles: [""] }]
-        }], ctorParameters: function () { return [{ type: i1.NgxNotyImpl }]; }, propDecorators: { initData: [{
-                type: Input
-            }], columnNames: [{
-                type: Input
-            }], dataChange: [{
-                type: Output
-            }], onReset: [{
-                type: Output
-            }], searchBox: [{
-                type: ViewChild,
-                args: ['searchBox', { static: true }]
-            }], datatable: [{
-                type: ViewChild,
-                args: ['datatable', { static: true }]
-            }], editActionHeaderTmpl: [{
-                type: ViewChild,
-                args: ["editActionHeader", { static: true }]
-            }], editActionCellTmpl: [{
-                type: ViewChild,
-                args: ["editActionCell ", { static: true }]
-            }], inputCellTmpl: [{
-                type: ViewChild,
-                args: ["inputCell ", { static: true }]
-            }] } });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DataProcessorComponent, [{
+        type: Component,
+        args: [{ selector: 'polp-data-processor', template: "<div class=\"card\">\n    <div class=\"card-body\">\n\n        <div class=\"btn-toolbar mb-4\" role=\"toolbar\" aria-label=\"Operations\" *ngIf=\"editable\">\n            <div class=\"btn-group me-2\" role=\"group\" aria-label=\"Update\">\n                <button class=\"btn btn-success\" role=\"button\" *ngIf=\"settings.canCreate\"\n                        (click)=\"startAdd()\" [disabled]=\"selected.length > 0 || anyEditing\">\n                    <fa-icon [icon]=\"faPlus\" class=\"me-1\"></fa-icon>\n                    Add\n                </button>\n                <button class=\"btn btn-danger\" role=\"button\" *ngIf=\"settings.canDelete\"\n                        (click)=\"rmAsync()\" [disabled]=\"selected.length <= 0\">\n                    <fa-icon [icon]=\"faTrash\" class=\"me-1\"></fa-icon>\n                    Delete\n                </button>\n            </div>\n            <div class=\"btn-group me-2\" role=\"group\" aria-label=\"Reset\">\n                <button class=\"btn btn-warning\" role=\"button\" (click)=\"isConfirmReset = true;\"\n                        [popover]=\"confirmResetTmpl\" triggers=\"\" [isOpen]=\"isConfirmReset\"\n                        container=\"body\" popoverTitle=\"Warning\"\n                        [disabled]=\"selected.length > 0 || anyEditing\">\n                    <fa-icon [icon]=\"faUndo\" class=\"me-1\"></fa-icon>\n                    Reset\n                </button>\n            </div>\n            <ng-template #confirmResetTmpl>\n                <div class=\"alert alert-warning\">\n                    This operation will discard all changes and cannot be undo. Are you sure to continue?\n                </div>\n                <div>\n                    <button class=\"btn btn-info me-2\" role=\"button\" (click)=\"isConfirmReset = false;\">\n                        <fa-icon [icon]=\"faTimes\" class=\"me-1\"></fa-icon>\n                        Cancel\n                    </button>\n                    <button class=\"btn btn-warning\" role=\"button\" (click)=\"isConfirmReset=false;reset();\">\n                        <fa-icon [icon]=\"faExclamationTriangle\" class=\"me-1\"></fa-icon>\n                        Confirm\n                    </button>\n                </div>\n            </ng-template>\n        </div>\n\n        <polp-bs-expandable-card [isCollapsed]=\"!showLogs\">\n            <span title>\n                Operation logs\n            </span>\n            <div class=\"container\" body>\n                <log-monitor\n                    [logStream]=\"logStream\"\n                    theme=\"dark\"\n                    title=\"Logs\"\n                    [animated]=\"true\"\n                    [icons]=\"true\">\n                </log-monitor>\n            </div>\n        </polp-bs-expandable-card>\n\n        <polp-bs-search-box-widget #searchBox\n                                   [debounceTime]=\"200\"\n                                   [minLength]=\"2\"\n                                   formClass=\"border rounded my-2 py-4 px-4 bg-light\"\n                                   (onSearch)=\"kickOffSearch()\">\n        </polp-bs-search-box-widget>\n\n        <ngx-datatable #datatable\n            class=\"bootstrap\"\n            [rows]=\"rows\"\n            [columns]=\"columns\"\n            [columnMode]=\"ColumnMode.force\"\n            headerHeight=\"auto\"\n            [footerHeight]=\"50\"\n            rowHeight=\"auto\"\n            [limit]=\"pageSize\"\n            [scrollbarH]=\"true\"\n            [selected]=\"selected\"\n            [selectionType]=\"SelectionType.checkbox\"\n            [selectAllRowsOnPage]=\"false\"\n            (select)=\"onSelect($event)\">\n        </ngx-datatable>\n\n        <ng-template #titleHeader let-column=\"column\">\n            <div [innerHTML]=\"column.name\" class=\"fw-bold text-wrap\"></div>\n        </ng-template>\n\n        <ng-template #inputCell let-rowIndex=\"rowIndex\" let-row=\"row\" let-column=\"column\" let-value=\"value\">\n            <span *ngIf=\"!editing[rowIndex + '-' + column.prop]\" [innerHTML]=\"value\">\n            </span>\n            <input autofocus\n                   *ngIf=\"editing[rowIndex + '-' + column.prop]\"\n                   [type]=\"column.inputType\"\n                   [value]=\"value\"\n                   (blur)=\"updateValue($event, column.prop, rowIndex)\"\n            />            \n        </ng-template>\n\n        <ng-template #editActionHeader>\n            <span>\n                Actions\n            </span>\n        </ng-template>\n\n        <ng-template #editActionCell let-rowIndex=\"rowIndex\">\n            <button class=\"btn btn-outline-primary icon-only\" role=\"button\" (click)=\"startEdit(rowIndex)\"\n                    *ngIf=\"!backup[rowIndex]; else otherActionTmpl\">\n                <fa-icon [icon]=\"faEdit\"></fa-icon>\n            </button>\n            <ng-template #otherActionTmpl>\n                <button class=\"btn btn-outline-primary icon-only\" role=\"button\" (click)=\"confirmEditAsync(rowIndex)\">\n                    <fa-icon [icon]=\"faCheck\"></fa-icon>\n                </button>\n                <button class=\"btn btn-outline-warning icon-only\" role=\"button\" (click)=\"cancelEdit(rowIndex)\">\n                    <fa-icon [icon]=\"faTimes\"></fa-icon>\n                </button>\n            </ng-template>\n        </ng-template>\n    </div>\n</div>\n" }]
+    }], function () { return [{ type: i1$1.NgxNotyImpl }]; }, { initData: [{
+            type: Input
+        }], columnNames: [{
+            type: Input
+        }], dataChange: [{
+            type: Output
+        }], onReset: [{
+            type: Output
+        }], searchBox: [{
+            type: ViewChild,
+            args: ['searchBox', { static: true }]
+        }], datatable: [{
+            type: ViewChild,
+            args: ['datatable', { static: true }]
+        }], editActionHeaderTmpl: [{
+            type: ViewChild,
+            args: ["editActionHeader", { static: true }]
+        }], editActionCellTmpl: [{
+            type: ViewChild,
+            args: ["editActionCell ", { static: true }]
+        }], inputCellTmpl: [{
+            type: ViewChild,
+            args: ["inputCell ", { static: true }]
+        }] }); })();
 
+const _c0$1 = ["searchBox4DataPub"];
+const _c1 = ["datatable"];
+const _c2 = ["stateHeader"];
+const _c3 = ["stateCell"];
+const _c4 = ["titleCell"];
+const _c5 = ["inputCell"];
+function DataPublicationComponent_ng_template_22_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelement(0, "div", 20);
+} if (rf & 2) {
+    const column_r10 = ctx.column;
+    i0.ɵɵproperty("innerHTML", column_r10.name, i0.ɵɵsanitizeHtml);
+} }
+function DataPublicationComponent_ng_template_24_span_0_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelement(0, "span", 23);
+} if (rf & 2) {
+    const value_r14 = i0.ɵɵnextContext().value;
+    i0.ɵɵproperty("innerHTML", value_r14, i0.ɵɵsanitizeHtml);
+} }
+function DataPublicationComponent_ng_template_24_input_1_Template(rf, ctx) { if (rf & 1) {
+    const _r20 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "input", 24);
+    i0.ɵɵlistener("blur", function DataPublicationComponent_ng_template_24_input_1_Template_input_blur_0_listener($event) { i0.ɵɵrestoreView(_r20); const ctx_r19 = i0.ɵɵnextContext(); const column_r13 = ctx_r19.column; const rowIndex_r11 = ctx_r19.rowIndex; const ctx_r18 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r18.updateValue($event, column_r13.prop, rowIndex_r11)); });
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r21 = i0.ɵɵnextContext();
+    const column_r13 = ctx_r21.column;
+    const value_r14 = ctx_r21.value;
+    i0.ɵɵproperty("type", column_r13.inputType)("value", value_r14);
+} }
+function DataPublicationComponent_ng_template_24_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵtemplate(0, DataPublicationComponent_ng_template_24_span_0_Template, 1, 1, "span", 21);
+    i0.ɵɵtemplate(1, DataPublicationComponent_ng_template_24_input_1_Template, 1, 2, "input", 22);
+} if (rf & 2) {
+    const rowIndex_r11 = ctx.rowIndex;
+    const column_r13 = ctx.column;
+    const ctx_r5 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("ngIf", !ctx_r5.editing[rowIndex_r11 + "-" + column_r13.prop]);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngIf", ctx_r5.editing[rowIndex_r11 + "-" + column_r13.prop]);
+} }
+function DataPublicationComponent_ng_template_26_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span", 25);
+    i0.ɵɵtext(1, " State ");
+    i0.ɵɵelementEnd();
+} }
+function DataPublicationComponent_ng_template_28_span_1_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span", 30);
+    i0.ɵɵelement(1, "fa-icon", 31);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r24 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("icon", ctx_r24.faHourglass);
+} }
+function DataPublicationComponent_ng_template_28_span_2_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span", 30);
+    i0.ɵɵelement(1, "fa-icon", 32);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r25 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("icon", ctx_r25.faHourglass)("spin", true);
+} }
+function DataPublicationComponent_ng_template_28_span_3_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span", 33);
+    i0.ɵɵelement(1, "fa-icon", 31);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r26 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("icon", ctx_r26.faCheck);
+} }
+function DataPublicationComponent_ng_template_28_span_4_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span", 34);
+    i0.ɵɵelement(1, "fa-icon", 31);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r27 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("icon", ctx_r27.faTimes);
+} }
+function DataPublicationComponent_ng_template_28_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementContainerStart(0, 26);
+    i0.ɵɵtemplate(1, DataPublicationComponent_ng_template_28_span_1_Template, 2, 1, "span", 27);
+    i0.ɵɵtemplate(2, DataPublicationComponent_ng_template_28_span_2_Template, 2, 2, "span", 27);
+    i0.ɵɵtemplate(3, DataPublicationComponent_ng_template_28_span_3_Template, 2, 1, "span", 28);
+    i0.ɵɵtemplate(4, DataPublicationComponent_ng_template_28_span_4_Template, 2, 1, "span", 29);
+    i0.ɵɵelementContainerEnd();
+} if (rf & 2) {
+    const value_r23 = ctx.value;
+    i0.ɵɵproperty("ngSwitch", value_r23);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngSwitchCase", "waiting");
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngSwitchCase", "working");
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngSwitchCase", "success");
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngSwitchCase", "failure");
+} }
 let DataPublicationComponent = class DataPublicationComponent extends NgxDatatableLocalData {
     constructor(noty) {
         super();
@@ -515,56 +836,170 @@ let DataPublicationComponent = class DataPublicationComponent extends NgxDatatab
         return noError;
     }
 };
-DataPublicationComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DataPublicationComponent, deps: [{ token: i1.NgxNotyImpl }], target: i0.ɵɵFactoryTarget.Component });
-DataPublicationComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.12", type: DataPublicationComponent, selector: "polp-data-publication", inputs: { initData: "initData", columnNames: "columnNames", uploadAsync: "uploadAsync" }, outputs: { onImport: "onImport", afterImport: "afterImport" }, viewQueries: [{ propertyName: "searchBox", first: true, predicate: ["searchBox4DataPub"], descendants: true, static: true }, { propertyName: "datatable", first: true, predicate: ["datatable"], descendants: true, static: true }, { propertyName: "stateHeaderTmpl", first: true, predicate: ["stateHeader"], descendants: true, static: true }, { propertyName: "stateCellTmpl", first: true, predicate: ["stateCell "], descendants: true, static: true }, { propertyName: "titleCellTmpl", first: true, predicate: ["titleCell "], descendants: true, static: true }, { propertyName: "inputCellTmpl", first: true, predicate: ["inputCell "], descendants: true, static: true }], usesInheritance: true, ngImport: i0, template: "<div class=\"card\">\n    <div class=\"card-body\">\n\n        <div class=\"btn-toolbar mb-4\" role=\"toolbar\" aria-label=\"Operations\">\n            <div class=\"btn-group me-2\" role=\"group\" aria-label=\"Upload\">\n                <button class=\"btn btn-success\" role=\"button\" (click)=\"uploadSelectedAsync()\" [disabled]=\"selected.length <= 0\">\n                    <fa-icon [icon]=\"faArrowUp\" class=\"me-1\"></fa-icon>\n                    Upload selected\n                </button>\n                <button class=\"btn btn-info\" role=\"button\" (click)=\"uploadAllAsync()\" [disabled]=\"anyKeyword\">\n                    <fa-icon [icon]=\"faArrowCircleUp\" class=\"me-1\"></fa-icon>\n                    Upload all\n                </button>\n                <button class=\"btn btn-warning\" role=\"button\" (click)=\"uploadAllAsync()\" [disabled]=\"!anyKeyword\">\n                    <fa-icon [icon]=\"faArrowCircleUp\" class=\"me-1\"></fa-icon>\n                    Upload filtered\n                </button>\n            </div>\n        </div>\n\n        <polp-bs-expandable-card [isCollapsed]=\"!showLogs\">\n            <span title>\n                Data import logs\n            </span>\n            <div class=\"container\" body>\n                <log-monitor\n                    [logStream]=\"logStream\"\n                    theme=\"dark\"\n                    title=\"logs\"\n                    [animated]=\"true\"\n                    [icons]=\"true\">\n                </log-monitor>\n            </div>\n        </polp-bs-expandable-card>\n\n        <polp-bs-search-box-widget #searchBox4DataPub\n                                   [debounceTime]=\"200\"\n                                   [minLength]=\"2\"\n                                   formClass=\"border rounded my-2 py-4 px-4 bg-light\"\n                                   (onSearch)=\"kickOffSearch()\">\n        </polp-bs-search-box-widget>\n                    \n        <ngx-datatable #datatable\n            class=\"bootstrap\"\n            [rows]=\"rows\"\n            [columns]=\"columns\"\n            [columnMode]=\"ColumnMode.force\"\n            headerHeight=\"auto\"\n            [footerHeight]=\"50\"\n            rowHeight=\"auto\"\n            [limit]=\"pageSize\"\n            [scrollbarH]=\"true\"\n            [selected]=\"selected\"\n            [selectionType]=\"SelectionType.checkbox\"\n            [selectAllRowsOnPage]=\"true\"\n            (select)=\"onSelect($event)\">\n        </ngx-datatable>\n\n        <ng-template #titleHeader let-column=\"column\">\n            <div [innerHTML]=\"column.name\" class=\"fw-bold text-wrap\"></div>\n        </ng-template>\n\n        <ng-template #inputCell let-rowIndex=\"rowIndex\" let-row=\"row\" let-column=\"column\" let-value=\"value\">\n            <span *ngIf=\"!editing[rowIndex + '-' + column.prop]\" [innerHTML]=\"value\">\n            </span>\n            <input autofocus\n                   *ngIf=\"editing[rowIndex + '-' + column.prop]\"\n                   [type]=\"column.inputType\"\n                   [value]=\"value\"\n                   (blur)=\"updateValue($event, column.prop, rowIndex)\"\n            />            \n        </ng-template>\n\n        <ng-template #stateHeader let-column=\"column\">\n            <span class=\"fw-bold text-warp\">\n                State\n            </span>\n        </ng-template>\n\n        <ng-template #stateCell let-value=\"value\">\n            <ng-container [ngSwitch]=\"value\">\n                <span class=\"text-info\" *ngSwitchCase=\"'waiting'\">\n                    <fa-icon [icon]=\"faHourglass\">\n                    </fa-icon>\n                </span>\n                <span class=\"text-info\" *ngSwitchCase=\"'working'\">\n                    <fa-icon [icon]=\"faHourglass\" [spin]=\"true\">\n                    </fa-icon>\n                </span>\n                <span class=\"text-success\" *ngSwitchCase=\"'success'\">\n                    <fa-icon [icon]=\"faCheck\" >\n                    </fa-icon>\n                </span>\n                <span class=\"text-danger\" *ngSwitchCase=\"'failure'\">\n                    <fa-icon [icon]=\"faTimes\">\n                    </fa-icon>\n                </span>\n            </ng-container>\n        </ng-template>\n    </div>\n</div>\n\n", styles: [""], components: [{ type: i2.FaIconComponent, selector: "fa-icon", inputs: ["icon", "title", "spin", "pulse", "mask", "styles", "flip", "size", "pull", "border", "inverse", "symbol", "rotate", "fixedWidth", "classes", "transform", "a11yRole"] }, { type: i3.ExpandableCardComponent, selector: "polp-bs-expandable-card", inputs: ["isCollapsed", "titleClass"] }, { type: i4.LogMonitorComponent, selector: "log-monitor", inputs: ["delay", "history", "theme", "icons", "customClass", "animated", "title", "logStream"] }, { type: i3.SearchBoxWidgetComponent, selector: "polp-bs-search-box-widget", inputs: ["initKeyword", "formClass", "inputClass", "prependText", "debounceTime", "minLength"], outputs: ["onSearch"] }, { type: i5.DatatableComponent, selector: "ngx-datatable", inputs: ["targetMarkerTemplate", "rows", "groupRowsBy", "groupedRows", "columns", "selected", "scrollbarV", "scrollbarH", "rowHeight", "columnMode", "headerHeight", "footerHeight", "externalPaging", "externalSorting", "limit", "count", "offset", "loadingIndicator", "selectionType", "reorderable", "swapColumns", "sortType", "sorts", "cssClasses", "messages", "rowClass", "selectCheck", "displayCheck", "groupExpansionDefault", "trackByProp", "selectAllRowsOnPage", "virtualization", "treeFromRelation", "treeToRelation", "summaryRow", "summaryHeight", "summaryPosition", "rowIdentity"], outputs: ["scroll", "activate", "select", "sort", "page", "reorder", "resize", "tableContextmenu", "treeAction"] }], directives: [{ type: i6.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { type: i6.NgSwitch, selector: "[ngSwitch]", inputs: ["ngSwitch"] }, { type: i6.NgSwitchCase, selector: "[ngSwitchCase]", inputs: ["ngSwitchCase"] }] });
+DataPublicationComponent.ɵfac = function DataPublicationComponent_Factory(t) { return new (t || DataPublicationComponent)(i0.ɵɵdirectiveInject(i1$1.NgxNotyImpl)); };
+DataPublicationComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: DataPublicationComponent, selectors: [["polp-data-publication"]], viewQuery: function DataPublicationComponent_Query(rf, ctx) { if (rf & 1) {
+        i0.ɵɵviewQuery(_c0$1, 7);
+        i0.ɵɵviewQuery(_c1, 7);
+        i0.ɵɵviewQuery(_c2, 7);
+        i0.ɵɵviewQuery(_c3, 7);
+        i0.ɵɵviewQuery(_c4, 7);
+        i0.ɵɵviewQuery(_c5, 7);
+    } if (rf & 2) {
+        let _t;
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.searchBox = _t.first);
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.datatable = _t.first);
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.stateHeaderTmpl = _t.first);
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.stateCellTmpl = _t.first);
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.titleCellTmpl = _t.first);
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.inputCellTmpl = _t.first);
+    } }, inputs: { initData: "initData", columnNames: "columnNames", uploadAsync: "uploadAsync" }, outputs: { onImport: "onImport", afterImport: "afterImport" }, features: [i0.ɵɵInheritDefinitionFeature], decls: 30, vars: 21, consts: [[1, "card"], [1, "card-body"], ["role", "toolbar", "aria-label", "Operations", 1, "btn-toolbar", "mb-4"], ["role", "group", "aria-label", "Upload", 1, "btn-group", "me-2"], ["role", "button", 1, "btn", "btn-success", 3, "disabled", "click"], [1, "me-1", 3, "icon"], ["role", "button", 1, "btn", "btn-info", 3, "disabled", "click"], ["role", "button", 1, "btn", "btn-warning", 3, "disabled", "click"], [3, "isCollapsed"], ["title", ""], ["body", "", 1, "container"], ["theme", "dark", "title", "logs", 3, "logStream", "animated", "icons"], ["formClass", "border rounded my-2 py-4 px-4 bg-light", 3, "debounceTime", "minLength", "onSearch"], ["searchBox4DataPub", ""], ["headerHeight", "auto", "rowHeight", "auto", 1, "bootstrap", 3, "rows", "columns", "columnMode", "footerHeight", "limit", "scrollbarH", "selected", "selectionType", "selectAllRowsOnPage", "select"], ["datatable", ""], ["titleHeader", ""], ["inputCell", ""], ["stateHeader", ""], ["stateCell", ""], [1, "fw-bold", "text-wrap", 3, "innerHTML"], [3, "innerHTML", 4, "ngIf"], ["autofocus", "", 3, "type", "value", "blur", 4, "ngIf"], [3, "innerHTML"], ["autofocus", "", 3, "type", "value", "blur"], [1, "fw-bold", "text-warp"], [3, "ngSwitch"], ["class", "text-info", 4, "ngSwitchCase"], ["class", "text-success", 4, "ngSwitchCase"], ["class", "text-danger", 4, "ngSwitchCase"], [1, "text-info"], [3, "icon"], [3, "icon", "spin"], [1, "text-success"], [1, "text-danger"]], template: function DataPublicationComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "button", 4);
+        i0.ɵɵlistener("click", function DataPublicationComponent_Template_button_click_4_listener() { return ctx.uploadSelectedAsync(); });
+        i0.ɵɵelement(5, "fa-icon", 5);
+        i0.ɵɵtext(6, " Upload selected ");
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(7, "button", 6);
+        i0.ɵɵlistener("click", function DataPublicationComponent_Template_button_click_7_listener() { return ctx.uploadAllAsync(); });
+        i0.ɵɵelement(8, "fa-icon", 5);
+        i0.ɵɵtext(9, " Upload all ");
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(10, "button", 7);
+        i0.ɵɵlistener("click", function DataPublicationComponent_Template_button_click_10_listener() { return ctx.uploadAllAsync(); });
+        i0.ɵɵelement(11, "fa-icon", 5);
+        i0.ɵɵtext(12, " Upload filtered ");
+        i0.ɵɵelementEnd()()();
+        i0.ɵɵelementStart(13, "polp-bs-expandable-card", 8)(14, "span", 9);
+        i0.ɵɵtext(15, " Data import logs ");
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(16, "div", 10);
+        i0.ɵɵelement(17, "log-monitor", 11);
+        i0.ɵɵelementEnd()();
+        i0.ɵɵelementStart(18, "polp-bs-search-box-widget", 12, 13);
+        i0.ɵɵlistener("onSearch", function DataPublicationComponent_Template_polp_bs_search_box_widget_onSearch_18_listener() { return ctx.kickOffSearch(); });
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(20, "ngx-datatable", 14, 15);
+        i0.ɵɵlistener("select", function DataPublicationComponent_Template_ngx_datatable_select_20_listener($event) { return ctx.onSelect($event); });
+        i0.ɵɵelementEnd();
+        i0.ɵɵtemplate(22, DataPublicationComponent_ng_template_22_Template, 1, 1, "ng-template", null, 16, i0.ɵɵtemplateRefExtractor);
+        i0.ɵɵtemplate(24, DataPublicationComponent_ng_template_24_Template, 2, 2, "ng-template", null, 17, i0.ɵɵtemplateRefExtractor);
+        i0.ɵɵtemplate(26, DataPublicationComponent_ng_template_26_Template, 2, 0, "ng-template", null, 18, i0.ɵɵtemplateRefExtractor);
+        i0.ɵɵtemplate(28, DataPublicationComponent_ng_template_28_Template, 5, 5, "ng-template", null, 19, i0.ɵɵtemplateRefExtractor);
+        i0.ɵɵelementEnd()();
+    } if (rf & 2) {
+        i0.ɵɵadvance(4);
+        i0.ɵɵproperty("disabled", ctx.selected.length <= 0);
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("icon", ctx.faArrowUp);
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("disabled", ctx.anyKeyword);
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("icon", ctx.faArrowCircleUp);
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("disabled", !ctx.anyKeyword);
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("icon", ctx.faArrowCircleUp);
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("isCollapsed", !ctx.showLogs);
+        i0.ɵɵadvance(4);
+        i0.ɵɵproperty("logStream", ctx.logStream)("animated", true)("icons", true);
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("debounceTime", 200)("minLength", 2);
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("rows", ctx.rows)("columns", ctx.columns)("columnMode", ctx.ColumnMode.force)("footerHeight", 50)("limit", ctx.pageSize)("scrollbarH", true)("selected", ctx.selected)("selectionType", ctx.SelectionType.checkbox)("selectAllRowsOnPage", true);
+    } }, dependencies: [i2.NgIf, i2.NgSwitch, i2.NgSwitchCase, i4.ExpandableCardComponent, i4.SearchBoxWidgetComponent, i5.FaIconComponent, i1.DatatableComponent, i7.LogMonitorComponent] });
 DataPublicationComponent = __decorate([
     supportOperationsDecorator
 ], DataPublicationComponent);
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DataPublicationComponent, decorators: [{
-            type: Component,
-            args: [{ selector: 'polp-data-publication', template: "<div class=\"card\">\n    <div class=\"card-body\">\n\n        <div class=\"btn-toolbar mb-4\" role=\"toolbar\" aria-label=\"Operations\">\n            <div class=\"btn-group me-2\" role=\"group\" aria-label=\"Upload\">\n                <button class=\"btn btn-success\" role=\"button\" (click)=\"uploadSelectedAsync()\" [disabled]=\"selected.length <= 0\">\n                    <fa-icon [icon]=\"faArrowUp\" class=\"me-1\"></fa-icon>\n                    Upload selected\n                </button>\n                <button class=\"btn btn-info\" role=\"button\" (click)=\"uploadAllAsync()\" [disabled]=\"anyKeyword\">\n                    <fa-icon [icon]=\"faArrowCircleUp\" class=\"me-1\"></fa-icon>\n                    Upload all\n                </button>\n                <button class=\"btn btn-warning\" role=\"button\" (click)=\"uploadAllAsync()\" [disabled]=\"!anyKeyword\">\n                    <fa-icon [icon]=\"faArrowCircleUp\" class=\"me-1\"></fa-icon>\n                    Upload filtered\n                </button>\n            </div>\n        </div>\n\n        <polp-bs-expandable-card [isCollapsed]=\"!showLogs\">\n            <span title>\n                Data import logs\n            </span>\n            <div class=\"container\" body>\n                <log-monitor\n                    [logStream]=\"logStream\"\n                    theme=\"dark\"\n                    title=\"logs\"\n                    [animated]=\"true\"\n                    [icons]=\"true\">\n                </log-monitor>\n            </div>\n        </polp-bs-expandable-card>\n\n        <polp-bs-search-box-widget #searchBox4DataPub\n                                   [debounceTime]=\"200\"\n                                   [minLength]=\"2\"\n                                   formClass=\"border rounded my-2 py-4 px-4 bg-light\"\n                                   (onSearch)=\"kickOffSearch()\">\n        </polp-bs-search-box-widget>\n                    \n        <ngx-datatable #datatable\n            class=\"bootstrap\"\n            [rows]=\"rows\"\n            [columns]=\"columns\"\n            [columnMode]=\"ColumnMode.force\"\n            headerHeight=\"auto\"\n            [footerHeight]=\"50\"\n            rowHeight=\"auto\"\n            [limit]=\"pageSize\"\n            [scrollbarH]=\"true\"\n            [selected]=\"selected\"\n            [selectionType]=\"SelectionType.checkbox\"\n            [selectAllRowsOnPage]=\"true\"\n            (select)=\"onSelect($event)\">\n        </ngx-datatable>\n\n        <ng-template #titleHeader let-column=\"column\">\n            <div [innerHTML]=\"column.name\" class=\"fw-bold text-wrap\"></div>\n        </ng-template>\n\n        <ng-template #inputCell let-rowIndex=\"rowIndex\" let-row=\"row\" let-column=\"column\" let-value=\"value\">\n            <span *ngIf=\"!editing[rowIndex + '-' + column.prop]\" [innerHTML]=\"value\">\n            </span>\n            <input autofocus\n                   *ngIf=\"editing[rowIndex + '-' + column.prop]\"\n                   [type]=\"column.inputType\"\n                   [value]=\"value\"\n                   (blur)=\"updateValue($event, column.prop, rowIndex)\"\n            />            \n        </ng-template>\n\n        <ng-template #stateHeader let-column=\"column\">\n            <span class=\"fw-bold text-warp\">\n                State\n            </span>\n        </ng-template>\n\n        <ng-template #stateCell let-value=\"value\">\n            <ng-container [ngSwitch]=\"value\">\n                <span class=\"text-info\" *ngSwitchCase=\"'waiting'\">\n                    <fa-icon [icon]=\"faHourglass\">\n                    </fa-icon>\n                </span>\n                <span class=\"text-info\" *ngSwitchCase=\"'working'\">\n                    <fa-icon [icon]=\"faHourglass\" [spin]=\"true\">\n                    </fa-icon>\n                </span>\n                <span class=\"text-success\" *ngSwitchCase=\"'success'\">\n                    <fa-icon [icon]=\"faCheck\" >\n                    </fa-icon>\n                </span>\n                <span class=\"text-danger\" *ngSwitchCase=\"'failure'\">\n                    <fa-icon [icon]=\"faTimes\">\n                    </fa-icon>\n                </span>\n            </ng-container>\n        </ng-template>\n    </div>\n</div>\n\n", styles: [""] }]
-        }], ctorParameters: function () { return [{ type: i1.NgxNotyImpl }]; }, propDecorators: { initData: [{
-                type: Input
-            }], columnNames: [{
-                type: Input
-            }], uploadAsync: [{
-                type: Input
-            }], onImport: [{
-                type: Output
-            }], afterImport: [{
-                type: Output
-            }], searchBox: [{
-                type: ViewChild,
-                args: ['searchBox4DataPub', { static: true }]
-            }], datatable: [{
-                type: ViewChild,
-                args: ['datatable', { static: true }]
-            }], stateHeaderTmpl: [{
-                type: ViewChild,
-                args: ["stateHeader", { static: true }]
-            }], stateCellTmpl: [{
-                type: ViewChild,
-                args: ["stateCell ", { static: true }]
-            }], titleCellTmpl: [{
-                type: ViewChild,
-                args: ["titleCell ", { static: true }]
-            }], inputCellTmpl: [{
-                type: ViewChild,
-                args: ["inputCell ", { static: true }]
-            }] } });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DataPublicationComponent, [{
+        type: Component,
+        args: [{ selector: 'polp-data-publication', template: "<div class=\"card\">\n    <div class=\"card-body\">\n\n        <div class=\"btn-toolbar mb-4\" role=\"toolbar\" aria-label=\"Operations\">\n            <div class=\"btn-group me-2\" role=\"group\" aria-label=\"Upload\">\n                <button class=\"btn btn-success\" role=\"button\" (click)=\"uploadSelectedAsync()\" [disabled]=\"selected.length <= 0\">\n                    <fa-icon [icon]=\"faArrowUp\" class=\"me-1\"></fa-icon>\n                    Upload selected\n                </button>\n                <button class=\"btn btn-info\" role=\"button\" (click)=\"uploadAllAsync()\" [disabled]=\"anyKeyword\">\n                    <fa-icon [icon]=\"faArrowCircleUp\" class=\"me-1\"></fa-icon>\n                    Upload all\n                </button>\n                <button class=\"btn btn-warning\" role=\"button\" (click)=\"uploadAllAsync()\" [disabled]=\"!anyKeyword\">\n                    <fa-icon [icon]=\"faArrowCircleUp\" class=\"me-1\"></fa-icon>\n                    Upload filtered\n                </button>\n            </div>\n        </div>\n\n        <polp-bs-expandable-card [isCollapsed]=\"!showLogs\">\n            <span title>\n                Data import logs\n            </span>\n            <div class=\"container\" body>\n                <log-monitor\n                    [logStream]=\"logStream\"\n                    theme=\"dark\"\n                    title=\"logs\"\n                    [animated]=\"true\"\n                    [icons]=\"true\">\n                </log-monitor>\n            </div>\n        </polp-bs-expandable-card>\n\n        <polp-bs-search-box-widget #searchBox4DataPub\n                                   [debounceTime]=\"200\"\n                                   [minLength]=\"2\"\n                                   formClass=\"border rounded my-2 py-4 px-4 bg-light\"\n                                   (onSearch)=\"kickOffSearch()\">\n        </polp-bs-search-box-widget>\n                    \n        <ngx-datatable #datatable\n            class=\"bootstrap\"\n            [rows]=\"rows\"\n            [columns]=\"columns\"\n            [columnMode]=\"ColumnMode.force\"\n            headerHeight=\"auto\"\n            [footerHeight]=\"50\"\n            rowHeight=\"auto\"\n            [limit]=\"pageSize\"\n            [scrollbarH]=\"true\"\n            [selected]=\"selected\"\n            [selectionType]=\"SelectionType.checkbox\"\n            [selectAllRowsOnPage]=\"true\"\n            (select)=\"onSelect($event)\">\n        </ngx-datatable>\n\n        <ng-template #titleHeader let-column=\"column\">\n            <div [innerHTML]=\"column.name\" class=\"fw-bold text-wrap\"></div>\n        </ng-template>\n\n        <ng-template #inputCell let-rowIndex=\"rowIndex\" let-row=\"row\" let-column=\"column\" let-value=\"value\">\n            <span *ngIf=\"!editing[rowIndex + '-' + column.prop]\" [innerHTML]=\"value\">\n            </span>\n            <input autofocus\n                   *ngIf=\"editing[rowIndex + '-' + column.prop]\"\n                   [type]=\"column.inputType\"\n                   [value]=\"value\"\n                   (blur)=\"updateValue($event, column.prop, rowIndex)\"\n            />            \n        </ng-template>\n\n        <ng-template #stateHeader let-column=\"column\">\n            <span class=\"fw-bold text-warp\">\n                State\n            </span>\n        </ng-template>\n\n        <ng-template #stateCell let-value=\"value\">\n            <ng-container [ngSwitch]=\"value\">\n                <span class=\"text-info\" *ngSwitchCase=\"'waiting'\">\n                    <fa-icon [icon]=\"faHourglass\">\n                    </fa-icon>\n                </span>\n                <span class=\"text-info\" *ngSwitchCase=\"'working'\">\n                    <fa-icon [icon]=\"faHourglass\" [spin]=\"true\">\n                    </fa-icon>\n                </span>\n                <span class=\"text-success\" *ngSwitchCase=\"'success'\">\n                    <fa-icon [icon]=\"faCheck\" >\n                    </fa-icon>\n                </span>\n                <span class=\"text-danger\" *ngSwitchCase=\"'failure'\">\n                    <fa-icon [icon]=\"faTimes\">\n                    </fa-icon>\n                </span>\n            </ng-container>\n        </ng-template>\n    </div>\n</div>\n\n" }]
+    }], function () { return [{ type: i1$1.NgxNotyImpl }]; }, { initData: [{
+            type: Input
+        }], columnNames: [{
+            type: Input
+        }], uploadAsync: [{
+            type: Input
+        }], onImport: [{
+            type: Output
+        }], afterImport: [{
+            type: Output
+        }], searchBox: [{
+            type: ViewChild,
+            args: ['searchBox4DataPub', { static: true }]
+        }], datatable: [{
+            type: ViewChild,
+            args: ['datatable', { static: true }]
+        }], stateHeaderTmpl: [{
+            type: ViewChild,
+            args: ["stateHeader", { static: true }]
+        }], stateCellTmpl: [{
+            type: ViewChild,
+            args: ["stateCell ", { static: true }]
+        }], titleCellTmpl: [{
+            type: ViewChild,
+            args: ["titleCell ", { static: true }]
+        }], inputCellTmpl: [{
+            type: ViewChild,
+            args: ["inputCell ", { static: true }]
+        }] }); })();
 
 class DataStagingComponent {
     constructor() { }
     ngOnInit() {
     }
 }
-DataStagingComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DataStagingComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-DataStagingComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.12", type: DataStagingComponent, selector: "polp-data-staging", ngImport: i0, template: "<p>data-staging works!</p>\n", styles: [""] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DataStagingComponent, decorators: [{
-            type: Component,
-            args: [{ selector: 'polp-data-staging', template: "<p>data-staging works!</p>\n", styles: [""] }]
-        }], ctorParameters: function () { return []; } });
+DataStagingComponent.ɵfac = function DataStagingComponent_Factory(t) { return new (t || DataStagingComponent)(); };
+DataStagingComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: DataStagingComponent, selectors: [["polp-data-staging"]], decls: 2, vars: 0, template: function DataStagingComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "p");
+        i0.ɵɵtext(1, "data-staging works!");
+        i0.ɵɵelementEnd();
+    } } });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DataStagingComponent, [{
+        type: Component,
+        args: [{ selector: 'polp-data-staging', template: "<p>data-staging works!</p>\n" }]
+    }], function () { return []; }, null); })();
 
+function DefineColumnMappingComponent_div_14_option_12_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "option", 12);
+    i0.ɵɵelement(1, "span", 8);
+    i0.ɵɵpipe(2, "safeDom");
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const o_r4 = ctx.$implicit;
+    i0.ɵɵproperty("value", o_r4.id);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("innerHtml", i0.ɵɵpipeBind2(2, 2, o_r4.label, "html"), i0.ɵɵsanitizeHtml);
+} }
+function DefineColumnMappingComponent_div_14_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 1);
+    i0.ɵɵelementContainerStart(1, 7);
+    i0.ɵɵelementStart(2, "div", 2);
+    i0.ɵɵtext(3);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(4, "div", 3);
+    i0.ɵɵelement(5, "div", 8);
+    i0.ɵɵpipe(6, "safeDom");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelement(7, "div", 4);
+    i0.ɵɵelementStart(8, "div", 3)(9, "select", 9)(10, "option", 10);
+    i0.ɵɵtext(11, "...");
+    i0.ɵɵelementEnd();
+    i0.ɵɵtemplate(12, DefineColumnMappingComponent_div_14_option_12_Template, 3, 5, "option", 11);
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementContainerEnd();
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const i_r2 = ctx.index;
+    const ctx_r0 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("formGroupName", i_r2);
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate1(" ", i_r2 + 1, " ");
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("innerHtml", i0.ɵɵpipeBind2(6, 4, ctx_r0.sourceLabel(i_r2), "html"), i0.ɵɵsanitizeHtml);
+    i0.ɵɵadvance(7);
+    i0.ɵɵproperty("ngForOf", ctx_r0.targetColumns);
+} }
 function findFirstDuplicate(array) {
     var valuesSoFar = Object.create(null);
     for (let i = 0; i < array.length; ++i) {
@@ -652,19 +1087,57 @@ class DefineColumnMappingComponent extends DefaultFormBaseComponent {
         return this.sourceColumns.find(a => a.id == id).label;
     }
 }
-DefineColumnMappingComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DefineColumnMappingComponent, deps: [{ token: i1$1.FormBuilder }, { token: i2$1.LoggerProviderImpl }], target: i0.ɵɵFactoryTarget.Component });
-DefineColumnMappingComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.12", type: DefineColumnMappingComponent, selector: "polp-define-column-mapping", inputs: { sourceColumns: "sourceColumns", targetColumns: "targetColumns", initValue: "initValue" }, usesInheritance: true, ngImport: i0, template: "<form  [formGroup]=\"form\">\n    <!-- Header -->\n    <div class=\"form-row mb-4\">\n        <div class=\"col-1\">\n            #\n        </div>\n        <div class=\"col-4\">\n            <b>Source</b>\n        </div>\n        <div class=\"col-3\">\n            <b>Example</b>\n        </div>\n        <div class=\"col-4\">\n            <b>Target</b>\n        </div>\n    </div>\n    \n    <ng-container formArrayName=\"mappings\">\n        <div class=\"form-row mb-4\" *ngFor=\"let f of mappings.controls; let i=index\">\n            <ng-container [formGroupName]=\"i\">\n                <div class=\"col-1\">\n                    {{i + 1}}\n                </div>\n                <div class=\"col-4\">\n                    <div [innerHtml]=\"sourceLabel(i) | safeDom:'html'\"></div>\n                </div>\n                <div class=\"col-3\">\n                    <!-- Something -->\n                </div>\n                <div class=\"col-4\">\n                    <select class=\"form-control form-control-sm\" formControlName=\"targetId\">\n                        <option value=\"\">...</option>                        \n                        <option *ngFor=\"let o of targetColumns\" [value]=\"o.id\">\n                            <span [innerHtml]=\"o.label | safeDom:'html'\">\n                            </span>\n                        </option>\n                    </select>\n                </div>\n            </ng-container>\n        </div>\n    </ng-container>                \n    \n</form>\n", styles: [""], directives: [{ type: i1$1.ɵNgNoValidate, selector: "form:not([ngNoForm]):not([ngNativeValidate])" }, { type: i1$1.NgControlStatusGroup, selector: "[formGroupName],[formArrayName],[ngModelGroup],[formGroup],form:not([ngNoForm]),[ngForm]" }, { type: i1$1.FormGroupDirective, selector: "[formGroup]", inputs: ["formGroup"], outputs: ["ngSubmit"], exportAs: ["ngForm"] }, { type: i1$1.FormArrayName, selector: "[formArrayName]", inputs: ["formArrayName"] }, { type: i6.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { type: i1$1.FormGroupName, selector: "[formGroupName]", inputs: ["formGroupName"] }, { type: i1$1.SelectControlValueAccessor, selector: "select:not([multiple])[formControlName],select:not([multiple])[formControl],select:not([multiple])[ngModel]", inputs: ["compareWith"] }, { type: i1$1.NgControlStatus, selector: "[formControlName],[ngModel],[formControl]" }, { type: i1$1.FormControlName, selector: "[formControlName]", inputs: ["formControlName", "disabled", "ngModel"], outputs: ["ngModelChange"] }, { type: i1$1.NgSelectOption, selector: "option", inputs: ["ngValue", "value"] }, { type: i1$1.ɵNgSelectMultipleOption, selector: "option", inputs: ["ngValue", "value"] }], pipes: { "safeDom": i4$1.SafeDomPipe } });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DefineColumnMappingComponent, decorators: [{
-            type: Component,
-            args: [{ selector: 'polp-define-column-mapping', template: "<form  [formGroup]=\"form\">\n    <!-- Header -->\n    <div class=\"form-row mb-4\">\n        <div class=\"col-1\">\n            #\n        </div>\n        <div class=\"col-4\">\n            <b>Source</b>\n        </div>\n        <div class=\"col-3\">\n            <b>Example</b>\n        </div>\n        <div class=\"col-4\">\n            <b>Target</b>\n        </div>\n    </div>\n    \n    <ng-container formArrayName=\"mappings\">\n        <div class=\"form-row mb-4\" *ngFor=\"let f of mappings.controls; let i=index\">\n            <ng-container [formGroupName]=\"i\">\n                <div class=\"col-1\">\n                    {{i + 1}}\n                </div>\n                <div class=\"col-4\">\n                    <div [innerHtml]=\"sourceLabel(i) | safeDom:'html'\"></div>\n                </div>\n                <div class=\"col-3\">\n                    <!-- Something -->\n                </div>\n                <div class=\"col-4\">\n                    <select class=\"form-control form-control-sm\" formControlName=\"targetId\">\n                        <option value=\"\">...</option>                        \n                        <option *ngFor=\"let o of targetColumns\" [value]=\"o.id\">\n                            <span [innerHtml]=\"o.label | safeDom:'html'\">\n                            </span>\n                        </option>\n                    </select>\n                </div>\n            </ng-container>\n        </div>\n    </ng-container>                \n    \n</form>\n", styles: [""] }]
-        }], ctorParameters: function () { return [{ type: i1$1.FormBuilder }, { type: i2$1.LoggerProviderImpl }]; }, propDecorators: { sourceColumns: [{
-                type: Input
-            }], targetColumns: [{
-                type: Input
-            }], initValue: [{
-                type: Input
-            }] } });
+DefineColumnMappingComponent.ɵfac = function DefineColumnMappingComponent_Factory(t) { return new (t || DefineColumnMappingComponent)(i0.ɵɵdirectiveInject(i1$2.UntypedFormBuilder), i0.ɵɵdirectiveInject(i2$1.LoggerProviderImpl)); };
+DefineColumnMappingComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: DefineColumnMappingComponent, selectors: [["polp-define-column-mapping"]], inputs: { sourceColumns: "sourceColumns", targetColumns: "targetColumns", initValue: "initValue" }, features: [i0.ɵɵInheritDefinitionFeature], decls: 15, vars: 2, consts: [[3, "formGroup"], [1, "form-row", "mb-4"], [1, "col-1"], [1, "col-4"], [1, "col-3"], ["formArrayName", "mappings"], ["class", "form-row mb-4", 4, "ngFor", "ngForOf"], [3, "formGroupName"], [3, "innerHtml"], ["formControlName", "targetId", 1, "form-control", "form-control-sm"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"]], template: function DefineColumnMappingComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "form", 0)(1, "div", 1)(2, "div", 2);
+        i0.ɵɵtext(3, " # ");
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(4, "div", 3)(5, "b");
+        i0.ɵɵtext(6, "Source");
+        i0.ɵɵelementEnd()();
+        i0.ɵɵelementStart(7, "div", 4)(8, "b");
+        i0.ɵɵtext(9, "Example");
+        i0.ɵɵelementEnd()();
+        i0.ɵɵelementStart(10, "div", 3)(11, "b");
+        i0.ɵɵtext(12, "Target");
+        i0.ɵɵelementEnd()()();
+        i0.ɵɵelementContainerStart(13, 5);
+        i0.ɵɵtemplate(14, DefineColumnMappingComponent_div_14_Template, 13, 7, "div", 6);
+        i0.ɵɵelementContainerEnd();
+        i0.ɵɵelementEnd();
+    } if (rf & 2) {
+        i0.ɵɵproperty("formGroup", ctx.form);
+        i0.ɵɵadvance(14);
+        i0.ɵɵproperty("ngForOf", ctx.mappings.controls);
+    } }, dependencies: [i2.NgForOf, i1$2.ɵNgNoValidate, i1$2.NgSelectOption, i1$2.ɵNgSelectMultipleOption, i1$2.SelectControlValueAccessor, i1$2.NgControlStatus, i1$2.NgControlStatusGroup, i1$2.FormGroupDirective, i1$2.FormControlName, i1$2.FormGroupName, i1$2.FormArrayName, i4$1.SafeDomPipe] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DefineColumnMappingComponent, [{
+        type: Component,
+        args: [{ selector: 'polp-define-column-mapping', template: "<form  [formGroup]=\"form\">\n    <!-- Header -->\n    <div class=\"form-row mb-4\">\n        <div class=\"col-1\">\n            #\n        </div>\n        <div class=\"col-4\">\n            <b>Source</b>\n        </div>\n        <div class=\"col-3\">\n            <b>Example</b>\n        </div>\n        <div class=\"col-4\">\n            <b>Target</b>\n        </div>\n    </div>\n    \n    <ng-container formArrayName=\"mappings\">\n        <div class=\"form-row mb-4\" *ngFor=\"let f of mappings.controls; let i=index\">\n            <ng-container [formGroupName]=\"i\">\n                <div class=\"col-1\">\n                    {{i + 1}}\n                </div>\n                <div class=\"col-4\">\n                    <div [innerHtml]=\"sourceLabel(i) | safeDom:'html'\"></div>\n                </div>\n                <div class=\"col-3\">\n                    <!-- Something -->\n                </div>\n                <div class=\"col-4\">\n                    <select class=\"form-control form-control-sm\" formControlName=\"targetId\">\n                        <option value=\"\">...</option>                        \n                        <option *ngFor=\"let o of targetColumns\" [value]=\"o.id\">\n                            <span [innerHtml]=\"o.label | safeDom:'html'\">\n                            </span>\n                        </option>\n                    </select>\n                </div>\n            </ng-container>\n        </div>\n    </ng-container>                \n    \n</form>\n" }]
+    }], function () { return [{ type: i1$2.UntypedFormBuilder }, { type: i2$1.LoggerProviderImpl }]; }, { sourceColumns: [{
+            type: Input
+        }], targetColumns: [{
+            type: Input
+        }], initValue: [{
+            type: Input
+        }] }); })();
 
+function DropFileModalComponent_ng_template_6_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵtext(0, " Drop a file ");
+} }
+function DropFileModalComponent_div_8_Template(rf, ctx) { if (rf & 1) {
+    const _r4 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 12)(1, "span");
+    i0.ɵɵtext(2);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(3, "button", 13);
+    i0.ɵɵlistener("click", function DropFileModalComponent_div_8_Template_button_click_3_listener() { const restoredCtx = i0.ɵɵrestoreView(_r4); const f_r2 = restoredCtx.$implicit; const ctx_r3 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r3.onRemove(f_r2)); });
+    i0.ɵɵtext(4, "Remove");
+    i0.ɵɵelementEnd()();
+} if (rf & 2) {
+    const f_r2 = ctx.$implicit;
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate2("", f_r2.name, " (", f_r2.type, ")");
+} }
 class DropFileModalComponent extends ObservableModalAbstractComponent {
     constructor(bsModalRef, bsModalService) {
         super();
@@ -680,13 +1153,26 @@ class DropFileModalComponent extends ObservableModalAbstractComponent {
     }
     ngOnInit() {
     }
-    onSelect(event) {
-        this.items.push(...event.addedFiles);
-        this.valid = true;
+    onSelect(files) {
+        for (const droppedFile of files) {
+            // Is it a file?
+            if (droppedFile.fileEntry.isFile) {
+                const fileEntry = droppedFile.fileEntry;
+                fileEntry.file((file) => {
+                    if (!this.maxFileSizeInBytes || (this.maxFileSizeInBytes && file.size < this.maxFileSizeInBytes)) {
+                        this.items = [...this.items, file];
+                    }
+                });
+            }
+            else {
+                // It was a directory (empty directories are added, otherwise only files)
+            }
+        }
+        this.valid = this.items.length > 0;
     }
     onRemove(event) {
-        this.items.splice(this.items.indexOf(event), 1);
-        this.valid = false;
+        this.items = this.items.filter(x => x != event);
+        this.valid = this.items.length > 0;
     }
     confirm() {
         this.closeModal(this.items);
@@ -695,18 +1181,53 @@ class DropFileModalComponent extends ObservableModalAbstractComponent {
         this.closeModal(null);
     }
 }
-DropFileModalComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DropFileModalComponent, deps: [{ token: i1$2.BsModalRef }, { token: i1$2.BsModalService }], target: i0.ɵɵFactoryTarget.Component });
-DropFileModalComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.12", type: DropFileModalComponent, selector: "polp-drop-file-modal", inputs: { multiple: "multiple", accept: "accept", maxFileSizeInBytes: "maxFileSizeInBytes" }, usesInheritance: true, ngImport: i0, template: "<div class=\"modal-header\" polpModalDraggable>\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"close()\">\n    </button>\n</div>\n<div class=\"modal-body\">\n    <ngx-dropzone [multiple]=\"multiple\"\n                  [accept]=\"accept\"\n                  [maxFileSize]=\"maxFileSizeInBytes\"\n                  (change)=\"onSelect($event)\">        \n        <ngx-dropzone-label>Drop a file</ngx-dropzone-label>\n        <ngx-dropzone-preview *ngFor=\"let f of items\" [removable]=\"true\" (removed)=\"onRemove(f)\">\n\t    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>\n        </ngx-dropzone-preview>\n    </ngx-dropzone>\n</div>\n\n<div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-secondary\" (click)=\"close()\">Cancel</button>\n    <button class=\"btn btn-primary\" (click)=\"confirm()\" [disabled]=\"!valid\">\n        <fa-icon [icon]=\"faSave\" class=\"me-1\"></fa-icon> <span>Confirm</span>\n    </button>\n</div>\n", styles: [""], components: [{ type: i2$2.NgxDropzoneComponent, selector: "ngx-dropzone, [ngx-dropzone]", inputs: ["accept", "disabled", "multiple", "maxFileSize", "expandable", "disableClick", "processDirectoryDrop", "id", "aria-label", "aria-labelledby", "aria-describedby"], outputs: ["change"] }, { type: i2$2.NgxDropzonePreviewComponent, selector: "ngx-dropzone-preview", inputs: ["file", "removable"], outputs: ["removed"] }, { type: i2.FaIconComponent, selector: "fa-icon", inputs: ["icon", "title", "spin", "pulse", "mask", "styles", "flip", "size", "pull", "border", "inverse", "symbol", "rotate", "fixedWidth", "classes", "transform", "a11yRole"] }], directives: [{ type: i3$1.polpModalDraggableDirective, selector: "[polpModalDraggable]" }, { type: i2$2.NgxDropzoneLabelDirective, selector: "ngx-dropzone-label" }, { type: i6.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DropFileModalComponent, decorators: [{
-            type: Component,
-            args: [{ selector: 'polp-drop-file-modal', template: "<div class=\"modal-header\" polpModalDraggable>\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"close()\">\n    </button>\n</div>\n<div class=\"modal-body\">\n    <ngx-dropzone [multiple]=\"multiple\"\n                  [accept]=\"accept\"\n                  [maxFileSize]=\"maxFileSizeInBytes\"\n                  (change)=\"onSelect($event)\">        \n        <ngx-dropzone-label>Drop a file</ngx-dropzone-label>\n        <ngx-dropzone-preview *ngFor=\"let f of items\" [removable]=\"true\" (removed)=\"onRemove(f)\">\n\t    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>\n        </ngx-dropzone-preview>\n    </ngx-dropzone>\n</div>\n\n<div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-secondary\" (click)=\"close()\">Cancel</button>\n    <button class=\"btn btn-primary\" (click)=\"confirm()\" [disabled]=\"!valid\">\n        <fa-icon [icon]=\"faSave\" class=\"me-1\"></fa-icon> <span>Confirm</span>\n    </button>\n</div>\n", styles: [""] }]
-        }], ctorParameters: function () { return [{ type: i1$2.BsModalRef }, { type: i1$2.BsModalService }]; }, propDecorators: { multiple: [{
-                type: Input
-            }], accept: [{
-                type: Input
-            }], maxFileSizeInBytes: [{
-                type: Input
-            }] } });
+DropFileModalComponent.ɵfac = function DropFileModalComponent_Factory(t) { return new (t || DropFileModalComponent)(i0.ɵɵdirectiveInject(i1$3.BsModalRef), i0.ɵɵdirectiveInject(i1$3.BsModalService)); };
+DropFileModalComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: DropFileModalComponent, selectors: [["polp-drop-file-modal"]], inputs: { multiple: "multiple", accept: "accept", maxFileSizeInBytes: "maxFileSizeInBytes" }, features: [i0.ɵɵInheritDefinitionFeature], decls: 16, vars: 6, consts: [["polpModalDraggable", "", 1, "modal-header"], [1, "modal-title"], ["type", "button", "aria-label", "Close", 1, "btn-close", 3, "click"], [1, "modal-body"], [3, "multiple", "accept", "onFileDrop"], ["ngx-file-drop-content-tmp", ""], [1, "file-previews"], ["class", "preview-item", 4, "ngFor", "ngForOf"], [1, "modal-footer"], ["type", "button", 1, "btn", "btn-secondary", 3, "click"], [1, "btn", "btn-primary", 3, "disabled", "click"], [1, "me-1", 3, "icon"], [1, "preview-item"], [3, "click"]], template: function DropFileModalComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "div", 0)(1, "h4", 1);
+        i0.ɵɵtext(2);
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(3, "button", 2);
+        i0.ɵɵlistener("click", function DropFileModalComponent_Template_button_click_3_listener() { return ctx.close(); });
+        i0.ɵɵelementEnd()();
+        i0.ɵɵelementStart(4, "div", 3)(5, "ngx-file-drop", 4);
+        i0.ɵɵlistener("onFileDrop", function DropFileModalComponent_Template_ngx_file_drop_onFileDrop_5_listener($event) { return ctx.onSelect($event); });
+        i0.ɵɵtemplate(6, DropFileModalComponent_ng_template_6_Template, 1, 0, "ng-template", 5);
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(7, "div", 6);
+        i0.ɵɵtemplate(8, DropFileModalComponent_div_8_Template, 5, 2, "div", 7);
+        i0.ɵɵelementEnd()();
+        i0.ɵɵelementStart(9, "div", 8)(10, "button", 9);
+        i0.ɵɵlistener("click", function DropFileModalComponent_Template_button_click_10_listener() { return ctx.close(); });
+        i0.ɵɵtext(11, "Cancel");
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(12, "button", 10);
+        i0.ɵɵlistener("click", function DropFileModalComponent_Template_button_click_12_listener() { return ctx.confirm(); });
+        i0.ɵɵelement(13, "fa-icon", 11);
+        i0.ɵɵelementStart(14, "span");
+        i0.ɵɵtext(15, "Confirm");
+        i0.ɵɵelementEnd()()();
+    } if (rf & 2) {
+        i0.ɵɵadvance(2);
+        i0.ɵɵtextInterpolate(ctx.title);
+        i0.ɵɵadvance(3);
+        i0.ɵɵproperty("multiple", ctx.multiple)("accept", ctx.accept);
+        i0.ɵɵadvance(3);
+        i0.ɵɵproperty("ngForOf", ctx.items);
+        i0.ɵɵadvance(4);
+        i0.ɵɵproperty("disabled", !ctx.valid);
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("icon", ctx.faSave);
+    } }, dependencies: [i2.NgForOf, i3$1.NgxFileDropComponent, i3$1.NgxFileDropContentTemplateDirective, i2$2.polpModalDraggableDirective, i5.FaIconComponent] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DropFileModalComponent, [{
+        type: Component,
+        args: [{ selector: 'polp-drop-file-modal', template: "<div class=\"modal-header\" polpModalDraggable>\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"close()\">\n    </button>\n</div>\n<div class=\"modal-body\">\n    <ngx-file-drop\n        [multiple]=\"multiple\"\n        [accept]=\"accept\"\n        (onFileDrop)=\"onSelect($event)\">\n        <ng-template ngx-file-drop-content-tmp>\n            Drop a file\n        </ng-template>\n    </ngx-file-drop>\n\n    <div class=\"file-previews\">\n        <div class=\"preview-item\" *ngFor=\"let f of items\">\n            <span>{{ f.name }} ({{ f.type }})</span>\n            <button (click)=\"onRemove(f)\">Remove</button>\n        </div>\n    </div>\n</div>\n\n<div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-secondary\" (click)=\"close()\">Cancel</button>\n    <button class=\"btn btn-primary\" (click)=\"confirm()\" [disabled]=\"!valid\">\n        <fa-icon [icon]=\"faSave\" class=\"me-1\"></fa-icon> <span>Confirm</span>\n    </button>\n</div>\n" }]
+    }], function () { return [{ type: i1$3.BsModalRef }, { type: i1$3.BsModalService }]; }, { multiple: [{
+            type: Input
+        }], accept: [{
+            type: Input
+        }], maxFileSizeInBytes: [{
+            type: Input
+        }] }); })();
 
 function readExcelAsync(file) {
     return readXlsxFile(file);
@@ -718,6 +1239,79 @@ function writeExcelAsync(data, options) {
     });
 }
 
+function ExportDataWizardComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 5)(1, "div", 6)(2, "span", 7);
+    i0.ɵɵtext(3);
+    i0.ɵɵelementEnd();
+    i0.ɵɵtext(4, " Please review the following snippet of the data to be exported, and then continue to the next step. ");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(5, "div", 8);
+    i0.ɵɵelement(6, "polp-data-preview", 9);
+    i0.ɵɵelementEnd()();
+} if (rf & 2) {
+    const ctx_r0 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(3);
+    i0.ɵɵtextInterpolate1("Step ", ctx_r0.stepIndex + 1, "");
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("initData", ctx_r0.state.preview.rows)("columnNames", ctx_r0.state.preview.cols);
+} }
+function ExportDataWizardComponent_div_1_div_6_Template(rf, ctx) { if (rf & 1) {
+    const _r8 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div")(1, "button", 12);
+    i0.ɵɵlistener("click", function ExportDataWizardComponent_div_1_div_6_Template_button_click_1_listener() { i0.ɵɵrestoreView(_r8); const ctx_r7 = i0.ɵɵnextContext(2); return i0.ɵɵresetView(ctx_r7.confirmExport()); });
+    i0.ɵɵtext(2, " Start to export ");
+    i0.ɵɵelementEnd()();
+} }
+function ExportDataWizardComponent_div_1_ng_template_7_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelement(0, "log-monitor", 13);
+} if (rf & 2) {
+    const ctx_r6 = i0.ɵɵnextContext(2);
+    i0.ɵɵproperty("logStream", ctx_r6.logStream)("animated", true)("icons", true);
+} }
+function ExportDataWizardComponent_div_1_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 5)(1, "div", 6)(2, "span", 7);
+    i0.ɵɵtext(3);
+    i0.ɵɵelementEnd();
+    i0.ɵɵtext(4, " Please confirm ... ");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(5, "div", 8);
+    i0.ɵɵtemplate(6, ExportDataWizardComponent_div_1_div_6_Template, 3, 0, "div", 10);
+    i0.ɵɵtemplate(7, ExportDataWizardComponent_div_1_ng_template_7_Template, 1, 3, "ng-template", null, 11, i0.ɵɵtemplateRefExtractor);
+    i0.ɵɵelementEnd()();
+} if (rf & 2) {
+    const _r5 = i0.ɵɵreference(8);
+    const ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(3);
+    i0.ɵɵtextInterpolate1("Step ", ctx_r1.stepIndex + 1, "");
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("ngIf", !ctx_r1.confirmed)("ngIfElse", _r5);
+} }
+function ExportDataWizardComponent_button_3_Template(rf, ctx) { if (rf & 1) {
+    const _r10 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 14);
+    i0.ɵɵlistener("click", function ExportDataWizardComponent_button_3_Template_button_click_0_listener() { i0.ɵɵrestoreView(_r10); const ctx_r9 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r9.prevStep()); });
+    i0.ɵɵelement(1, "fa-icon", 15);
+    i0.ɵɵtext(2, " Previous ");
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r2 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("disabled", ctx_r2.disablePrevStep);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("icon", ctx_r2.faArrowLeft);
+} }
+function ExportDataWizardComponent_button_5_Template(rf, ctx) { if (rf & 1) {
+    const _r12 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 16);
+    i0.ɵɵlistener("click", function ExportDataWizardComponent_button_5_Template_button_click_0_listener() { i0.ɵɵrestoreView(_r12); const ctx_r11 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r11.nextStep()); });
+    i0.ɵɵtext(1, " Next ");
+    i0.ɵɵelement(2, "fa-icon", 15);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r3 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("disabled", ctx_r3.disableNextStep);
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("icon", ctx_r3.faArrowRight);
+} }
 function makeColumnSchema(data) {
     if (data.inputType == 'date') {
         // todo: Maybe simplify as a string
@@ -901,16 +1495,32 @@ class ExportDataWizardComponent extends WizardAbstractComponent {
         return data;
     }
 }
-ExportDataWizardComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: ExportDataWizardComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-ExportDataWizardComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.12", type: ExportDataWizardComponent, selector: "polp-export-data-wizard", inputs: { columns: "columns", downloadAsync: "downloadAsync" }, usesInheritance: true, ngImport: i0, template: "<div class=\"card\" *ngIf=\"visible(0)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please review the following snippet of the data to be\n        exported, and then continue to the next step.\n    </div>\n    <div class=\"card-body\">\n        <polp-data-preview [initData]=\"state.preview.rows\"\n                           [columnNames]=\"state.preview.cols\">\n        </polp-data-preview>\n    </div>\n</div>\n\n<div class=\"card\" *ngIf=\"visible(1)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please confirm ...\n    </div>\n    <div class=\"card-body\">\n        <div *ngIf=\"!confirmed; else exportLogs\">\n            <button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" (click)=\"confirmExport()\">\n                Start to export\n            </button>\n        </div>\n        <ng-template #exportLogs>\n            <log-monitor\n                [logStream]=\"logStream\"\n                theme=\"dark\"\n                title=\"Data export logs\"\n                [animated]=\"true\"\n                [icons]=\"true\">\n            </log-monitor>            \n        </ng-template>\n    </div>\n</div>\n\n<!-- Navigation -->\n<div class=\"d-flex mt-4 mb-4\">\n    <button type=\"button\" class=\"btn btn-warning\" [disabled]=\"disablePrevStep\"\n            *ngIf=\"hasPrevStep\" (click)=\"prevStep()\">\n        <fa-icon [icon]=\"faArrowLeft\"></fa-icon>\n        Previous\n    </button>\n    <span class=\"me-auto\"></span>    \n    <button type=\"button\" class=\"btn btn-primary\" [disabled]=\"disableNextStep\"\n            *ngIf=\"hasNextStep\" (click)=\"nextStep()\">\n        Next\n        <fa-icon [icon]=\"faArrowRight\"></fa-icon>                \n    </button>            \n</div>    \n\n", styles: [""], components: [{ type: DataPreviewComponent, selector: "polp-data-preview", inputs: ["initData", "columnNames"] }, { type: i4.LogMonitorComponent, selector: "log-monitor", inputs: ["delay", "history", "theme", "icons", "customClass", "animated", "title", "logStream"] }, { type: i2.FaIconComponent, selector: "fa-icon", inputs: ["icon", "title", "spin", "pulse", "mask", "styles", "flip", "size", "pull", "border", "inverse", "symbol", "rotate", "fixedWidth", "classes", "transform", "a11yRole"] }], directives: [{ type: i6.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: ExportDataWizardComponent, decorators: [{
-            type: Component,
-            args: [{ selector: 'polp-export-data-wizard', template: "<div class=\"card\" *ngIf=\"visible(0)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please review the following snippet of the data to be\n        exported, and then continue to the next step.\n    </div>\n    <div class=\"card-body\">\n        <polp-data-preview [initData]=\"state.preview.rows\"\n                           [columnNames]=\"state.preview.cols\">\n        </polp-data-preview>\n    </div>\n</div>\n\n<div class=\"card\" *ngIf=\"visible(1)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please confirm ...\n    </div>\n    <div class=\"card-body\">\n        <div *ngIf=\"!confirmed; else exportLogs\">\n            <button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" (click)=\"confirmExport()\">\n                Start to export\n            </button>\n        </div>\n        <ng-template #exportLogs>\n            <log-monitor\n                [logStream]=\"logStream\"\n                theme=\"dark\"\n                title=\"Data export logs\"\n                [animated]=\"true\"\n                [icons]=\"true\">\n            </log-monitor>            \n        </ng-template>\n    </div>\n</div>\n\n<!-- Navigation -->\n<div class=\"d-flex mt-4 mb-4\">\n    <button type=\"button\" class=\"btn btn-warning\" [disabled]=\"disablePrevStep\"\n            *ngIf=\"hasPrevStep\" (click)=\"prevStep()\">\n        <fa-icon [icon]=\"faArrowLeft\"></fa-icon>\n        Previous\n    </button>\n    <span class=\"me-auto\"></span>    \n    <button type=\"button\" class=\"btn btn-primary\" [disabled]=\"disableNextStep\"\n            *ngIf=\"hasNextStep\" (click)=\"nextStep()\">\n        Next\n        <fa-icon [icon]=\"faArrowRight\"></fa-icon>                \n    </button>            \n</div>    \n\n", styles: [""] }]
-        }], ctorParameters: function () { return []; }, propDecorators: { columns: [{
-                type: Input
-            }], downloadAsync: [{
-                type: Input
-            }] } });
+ExportDataWizardComponent.ɵfac = function ExportDataWizardComponent_Factory(t) { return new (t || ExportDataWizardComponent)(); };
+ExportDataWizardComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: ExportDataWizardComponent, selectors: [["polp-export-data-wizard"]], inputs: { columns: "columns", downloadAsync: "downloadAsync" }, features: [i0.ɵɵInheritDefinitionFeature], decls: 6, vars: 4, consts: [["class", "card", 4, "ngIf"], [1, "d-flex", "mt-4", "mb-4"], ["type", "button", "class", "btn btn-warning", 3, "disabled", "click", 4, "ngIf"], [1, "me-auto"], ["type", "button", "class", "btn btn-primary", 3, "disabled", "click", 4, "ngIf"], [1, "card"], [1, "card-header", "h6"], [1, "badge", "rounded-pill", "bg-dark", "me-1"], [1, "card-body"], [3, "initData", "columnNames"], [4, "ngIf", "ngIfElse"], ["exportLogs", ""], ["type", "button", 1, "btn", "btn-primary", "btn-lg", "btn-block", 3, "click"], ["theme", "dark", "title", "Data export logs", 3, "logStream", "animated", "icons"], ["type", "button", 1, "btn", "btn-warning", 3, "disabled", "click"], [3, "icon"], ["type", "button", 1, "btn", "btn-primary", 3, "disabled", "click"]], template: function ExportDataWizardComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵtemplate(0, ExportDataWizardComponent_div_0_Template, 7, 3, "div", 0);
+        i0.ɵɵtemplate(1, ExportDataWizardComponent_div_1_Template, 9, 3, "div", 0);
+        i0.ɵɵelementStart(2, "div", 1);
+        i0.ɵɵtemplate(3, ExportDataWizardComponent_button_3_Template, 3, 2, "button", 2);
+        i0.ɵɵelement(4, "span", 3);
+        i0.ɵɵtemplate(5, ExportDataWizardComponent_button_5_Template, 3, 2, "button", 4);
+        i0.ɵɵelementEnd();
+    } if (rf & 2) {
+        i0.ɵɵproperty("ngIf", ctx.visible(0));
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("ngIf", ctx.visible(1));
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("ngIf", ctx.hasPrevStep);
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("ngIf", ctx.hasNextStep);
+    } }, dependencies: [i2.NgIf, i5.FaIconComponent, i7.LogMonitorComponent, DataPreviewComponent] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ExportDataWizardComponent, [{
+        type: Component,
+        args: [{ selector: 'polp-export-data-wizard', template: "<div class=\"card\" *ngIf=\"visible(0)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please review the following snippet of the data to be\n        exported, and then continue to the next step.\n    </div>\n    <div class=\"card-body\">\n        <polp-data-preview [initData]=\"state.preview.rows\"\n                           [columnNames]=\"state.preview.cols\">\n        </polp-data-preview>\n    </div>\n</div>\n\n<div class=\"card\" *ngIf=\"visible(1)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please confirm ...\n    </div>\n    <div class=\"card-body\">\n        <div *ngIf=\"!confirmed; else exportLogs\">\n            <button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" (click)=\"confirmExport()\">\n                Start to export\n            </button>\n        </div>\n        <ng-template #exportLogs>\n            <log-monitor\n                [logStream]=\"logStream\"\n                theme=\"dark\"\n                title=\"Data export logs\"\n                [animated]=\"true\"\n                [icons]=\"true\">\n            </log-monitor>            \n        </ng-template>\n    </div>\n</div>\n\n<!-- Navigation -->\n<div class=\"d-flex mt-4 mb-4\">\n    <button type=\"button\" class=\"btn btn-warning\" [disabled]=\"disablePrevStep\"\n            *ngIf=\"hasPrevStep\" (click)=\"prevStep()\">\n        <fa-icon [icon]=\"faArrowLeft\"></fa-icon>\n        Previous\n    </button>\n    <span class=\"me-auto\"></span>    \n    <button type=\"button\" class=\"btn btn-primary\" [disabled]=\"disableNextStep\"\n            *ngIf=\"hasNextStep\" (click)=\"nextStep()\">\n        Next\n        <fa-icon [icon]=\"faArrowRight\"></fa-icon>                \n    </button>            \n</div>    \n\n" }]
+    }], function () { return []; }, { columns: [{
+            type: Input
+        }], downloadAsync: [{
+            type: Input
+        }] }); })();
 
 class ExportWizardModalComponent {
     constructor(bsModalRef, bsModalService) {
@@ -933,17 +1543,126 @@ class ExportWizardModalComponent {
         this.bsModalRef.hide();
     }
 }
-ExportWizardModalComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: ExportWizardModalComponent, deps: [{ token: i1$2.BsModalRef }, { token: i1$2.BsModalService }], target: i0.ɵɵFactoryTarget.Component });
-ExportWizardModalComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.12", type: ExportWizardModalComponent, selector: "polp-export-wizard-modal", inputs: { columns: "columns", downloadAsync: "downloadAsync" }, ngImport: i0, template: "<div class=\"modal-header\" polpModalDraggable>\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"close()\">\n    </button>\n</div>\n<div class=\"modal-body\">\n    <polp-export-data-wizard [columns]=\"columns\"\n                             [downloadAsync]=\"downloadAsync\">\n    </polp-export-data-wizard>\n</div>\n\n", styles: [""], components: [{ type: ExportDataWizardComponent, selector: "polp-export-data-wizard", inputs: ["columns", "downloadAsync"] }], directives: [{ type: i3$1.polpModalDraggableDirective, selector: "[polpModalDraggable]" }] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: ExportWizardModalComponent, decorators: [{
-            type: Component,
-            args: [{ selector: 'polp-export-wizard-modal', template: "<div class=\"modal-header\" polpModalDraggable>\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"close()\">\n    </button>\n</div>\n<div class=\"modal-body\">\n    <polp-export-data-wizard [columns]=\"columns\"\n                             [downloadAsync]=\"downloadAsync\">\n    </polp-export-data-wizard>\n</div>\n\n", styles: [""] }]
-        }], ctorParameters: function () { return [{ type: i1$2.BsModalRef }, { type: i1$2.BsModalService }]; }, propDecorators: { columns: [{
-                type: Input
-            }], downloadAsync: [{
-                type: Input
-            }] } });
+ExportWizardModalComponent.ɵfac = function ExportWizardModalComponent_Factory(t) { return new (t || ExportWizardModalComponent)(i0.ɵɵdirectiveInject(i1$3.BsModalRef), i0.ɵɵdirectiveInject(i1$3.BsModalService)); };
+ExportWizardModalComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: ExportWizardModalComponent, selectors: [["polp-export-wizard-modal"]], inputs: { columns: "columns", downloadAsync: "downloadAsync" }, decls: 6, vars: 3, consts: [["polpModalDraggable", "", 1, "modal-header"], [1, "modal-title"], ["type", "button", "aria-label", "Close", 1, "btn-close", 3, "click"], [1, "modal-body"], [3, "columns", "downloadAsync"]], template: function ExportWizardModalComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "div", 0)(1, "h4", 1);
+        i0.ɵɵtext(2);
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(3, "button", 2);
+        i0.ɵɵlistener("click", function ExportWizardModalComponent_Template_button_click_3_listener() { return ctx.close(); });
+        i0.ɵɵelementEnd()();
+        i0.ɵɵelementStart(4, "div", 3);
+        i0.ɵɵelement(5, "polp-export-data-wizard", 4);
+        i0.ɵɵelementEnd();
+    } if (rf & 2) {
+        i0.ɵɵadvance(2);
+        i0.ɵɵtextInterpolate(ctx.title);
+        i0.ɵɵadvance(3);
+        i0.ɵɵproperty("columns", ctx.columns)("downloadAsync", ctx.downloadAsync);
+    } }, dependencies: [i2$2.polpModalDraggableDirective, ExportDataWizardComponent] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ExportWizardModalComponent, [{
+        type: Component,
+        args: [{ selector: 'polp-export-wizard-modal', template: "<div class=\"modal-header\" polpModalDraggable>\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"close()\">\n    </button>\n</div>\n<div class=\"modal-body\">\n    <polp-export-data-wizard [columns]=\"columns\"\n                             [downloadAsync]=\"downloadAsync\">\n    </polp-export-data-wizard>\n</div>\n\n" }]
+    }], function () { return [{ type: i1$3.BsModalRef }, { type: i1$3.BsModalService }]; }, { columns: [{
+            type: Input
+        }], downloadAsync: [{
+            type: Input
+        }] }); })();
 
+function ImportDataWizardComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    const _r7 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 5)(1, "div", 6)(2, "span", 7);
+    i0.ɵɵtext(3);
+    i0.ɵɵelementEnd();
+    i0.ɵɵtext(4, " Please review the data below, make changes, and then continue to the next step. ");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(5, "div", 8)(6, "polp-data-processor", 9);
+    i0.ɵɵlistener("onReset", function ImportDataWizardComponent_div_0_Template_polp_data_processor_onReset_6_listener() { i0.ɵɵrestoreView(_r7); const ctx_r6 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r6.resetPreprocessor()); })("dataChange", function ImportDataWizardComponent_div_0_Template_polp_data_processor_dataChange_6_listener($event) { i0.ɵɵrestoreView(_r7); const ctx_r8 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r8.updatePreprocessor($event)); });
+    i0.ɵɵelementEnd()()();
+} if (rf & 2) {
+    const ctx_r0 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(3);
+    i0.ɵɵtextInterpolate1("Step ", ctx_r0.stepIndex + 1, "");
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("initData", ctx_r0.state.preprocessor.inputRows)("columnNames", ctx_r0.state.preprocessor.cols);
+} }
+function ImportDataWizardComponent_div_1_Template(rf, ctx) { if (rf & 1) {
+    const _r10 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 5)(1, "div", 6)(2, "span", 7);
+    i0.ɵɵtext(3);
+    i0.ɵɵelementEnd();
+    i0.ɵɵtext(4, " Please define the mappings from source columns to target columns, and then move to the next step. ");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(5, "div", 8)(6, "polp-define-column-mapping", 10);
+    i0.ɵɵlistener("onValueChanged", function ImportDataWizardComponent_div_1_Template_polp_define_column_mapping_onValueChanged_6_listener($event) { i0.ɵɵrestoreView(_r10); const ctx_r9 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r9.updateMappings($event)); })("onValidation", function ImportDataWizardComponent_div_1_Template_polp_define_column_mapping_onValidation_6_listener($event) { i0.ɵɵrestoreView(_r10); const ctx_r11 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r11.validateMappings($event)); });
+    i0.ɵɵelementEnd()()();
+} if (rf & 2) {
+    const ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(3);
+    i0.ɵɵtextInterpolate1("Step ", ctx_r1.stepIndex + 1, "");
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("sourceColumns", ctx_r1.sourceColumns)("targetColumns", ctx_r1.targetColumns)("initValue", ctx_r1.state.mappings);
+} }
+function ImportDataWizardComponent_div_2_Template(rf, ctx) { if (rf & 1) {
+    const _r13 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 5)(1, "div", 6)(2, "span", 7);
+    i0.ɵɵtext(3);
+    i0.ɵɵelementEnd();
+    i0.ɵɵtext(4, " Please review the data below, make changes, and then continue to the next step. ");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(5, "div", 8)(6, "polp-data-processor", 9);
+    i0.ɵɵlistener("onReset", function ImportDataWizardComponent_div_2_Template_polp_data_processor_onReset_6_listener() { i0.ɵɵrestoreView(_r13); const ctx_r12 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r12.resetPostprocessor()); })("dataChange", function ImportDataWizardComponent_div_2_Template_polp_data_processor_dataChange_6_listener($event) { i0.ɵɵrestoreView(_r13); const ctx_r14 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r14.updatePostprocessor($event)); });
+    i0.ɵɵelementEnd()()();
+} if (rf & 2) {
+    const ctx_r2 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(3);
+    i0.ɵɵtextInterpolate1("Step ", ctx_r2.stepIndex + 1, "");
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("initData", ctx_r2.state.postprocessor.inputRows)("columnNames", ctx_r2.state.postprocessor.cols);
+} }
+function ImportDataWizardComponent_div_3_Template(rf, ctx) { if (rf & 1) {
+    const _r16 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 5)(1, "div", 6)(2, "span", 7);
+    i0.ɵɵtext(3);
+    i0.ɵɵelementEnd();
+    i0.ɵɵtext(4, " Please review the data below, and upload some or all of them. ");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(5, "div", 8)(6, "polp-data-publication", 11);
+    i0.ɵɵlistener("onImport", function ImportDataWizardComponent_div_3_Template_polp_data_publication_onImport_6_listener() { i0.ɵɵrestoreView(_r16); const ctx_r15 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r15.startImport()); })("afterImport", function ImportDataWizardComponent_div_3_Template_polp_data_publication_afterImport_6_listener($event) { i0.ɵɵrestoreView(_r16); const ctx_r17 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r17.updateImportStat($event)); });
+    i0.ɵɵelementEnd()()();
+} if (rf & 2) {
+    const ctx_r3 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(3);
+    i0.ɵɵtextInterpolate1("Step ", ctx_r3.stepIndex + 1, "");
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("columnNames", ctx_r3.state.publication.cols)("uploadAsync", ctx_r3.uploadAsync)("initData", ctx_r3.state.publication.rows);
+} }
+function ImportDataWizardComponent_button_5_Template(rf, ctx) { if (rf & 1) {
+    const _r19 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 12);
+    i0.ɵɵlistener("click", function ImportDataWizardComponent_button_5_Template_button_click_0_listener() { i0.ɵɵrestoreView(_r19); const ctx_r18 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r18.prevStep()); });
+    i0.ɵɵelement(1, "fa-icon", 13);
+    i0.ɵɵtext(2, " Previous ");
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r4 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("disabled", ctx_r4.disablePrevStep);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("icon", ctx_r4.faArrowLeft);
+} }
+function ImportDataWizardComponent_button_7_Template(rf, ctx) { if (rf & 1) {
+    const _r21 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 14);
+    i0.ɵɵlistener("click", function ImportDataWizardComponent_button_7_Template_button_click_0_listener() { i0.ɵɵrestoreView(_r21); const ctx_r20 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r20.nextStep()); });
+    i0.ɵɵtext(1, " Next ");
+    i0.ɵɵelement(2, "fa-icon", 13);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r5 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("disabled", ctx_r5.disableNextStep);
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("icon", ctx_r5.faArrowRight);
+} }
 class ImportDataWizardComponent extends WizardAbstractComponent {
     constructor(_noty) {
         super();
@@ -1173,19 +1892,42 @@ class ImportDataWizardComponent extends WizardAbstractComponent {
         this.importStat.failure = evt.failure;
     }
 }
-ImportDataWizardComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: ImportDataWizardComponent, deps: [{ token: i1.NgxNotyImpl }], target: i0.ɵɵFactoryTarget.Component });
-ImportDataWizardComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.12", type: ImportDataWizardComponent, selector: "polp-import-data-wizard", inputs: { file: "file", targetColumns: "targetColumns", uploadAsync: "uploadAsync" }, usesInheritance: true, ngImport: i0, template: "<div class=\"card\" *ngIf=\"visible(0)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please review the data below, make changes, and then continue\n        to the next step.\n    </div>\n    <div class=\"card-body\">\n        <polp-data-processor [initData]=\"state.preprocessor.inputRows\"\n                             [columnNames]=\"state.preprocessor.cols\"\n                             (onReset)=\"resetPreprocessor()\"\n                             (dataChange)=\"updatePreprocessor($event)\">\n        </polp-data-processor>\n    </div>\n</div>\n\n<div class=\"card\" *ngIf=\"visible(1)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please define the mappings from source columns to target\n        columns, and then move to the next step.\n    </div>\n    <div class=\"card-body\">\n        <polp-define-column-mapping [sourceColumns]=\"sourceColumns\"\n                                    [targetColumns]=\"targetColumns\"\n                                    (onValueChanged)=\"updateMappings($event)\"\n                                    (onValidation)=\"validateMappings($event)\"\n                                    [initValue]=\"state.mappings\">\n        </polp-define-column-mapping>\n    </div>\n</div>\n\n<div class=\"card\" *ngIf=\"visible(1, 1)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please review the data below, make changes, and then continue\n        to the next step.\n    </div>\n    <div class=\"card-body\">\n        <polp-data-processor [initData]=\"state.postprocessor.inputRows\"\n                             [columnNames]=\"state.postprocessor.cols\"\n                             (onReset)=\"resetPostprocessor()\"\n                             (dataChange)=\"updatePostprocessor($event)\">\n        </polp-data-processor>\n    </div>\n</div>\n\n<div class=\"card\" *ngIf=\"visible(1, 1, 1)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please review the data below, and upload some or all of them.\n    </div>\n    <div class=\"card-body\">\n        <polp-data-publication [columnNames]=\"state.publication.cols\"\n                               [uploadAsync]=\"uploadAsync\"\n                               (onImport)=\"startImport()\"\n                               (afterImport)=\"updateImportStat($event)\"\n                               [initData]=\"state.publication.rows\">\n        </polp-data-publication>\n    </div>\n</div>\n\n<!-- Navigation -->\n<div class=\"d-flex mt-4 mb-4\">\n    <button type=\"button\" class=\"btn btn-warning\" [disabled]=\"disablePrevStep\"\n            *ngIf=\"hasPrevStep\" (click)=\"prevStep()\">\n        <fa-icon [icon]=\"faArrowLeft\"></fa-icon>\n        Previous\n    </button>\n    <span class=\"me-auto\"></span>    \n    <button type=\"button\" class=\"btn btn-primary\" [disabled]=\"disableNextStep\"\n            *ngIf=\"hasNextStep\" (click)=\"nextStep()\">\n        Next\n        <fa-icon [icon]=\"faArrowRight\"></fa-icon>                \n    </button>            \n</div>    \n", styles: [""], components: [{ type: DataProcessorComponent, selector: "polp-data-processor", inputs: ["initData", "columnNames"], outputs: ["dataChange", "onReset"] }, { type: DefineColumnMappingComponent, selector: "polp-define-column-mapping", inputs: ["sourceColumns", "targetColumns", "initValue"] }, { type: DataPublicationComponent, selector: "polp-data-publication", inputs: ["initData", "columnNames", "uploadAsync"], outputs: ["onImport", "afterImport"] }, { type: i2.FaIconComponent, selector: "fa-icon", inputs: ["icon", "title", "spin", "pulse", "mask", "styles", "flip", "size", "pull", "border", "inverse", "symbol", "rotate", "fixedWidth", "classes", "transform", "a11yRole"] }], directives: [{ type: i6.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: ImportDataWizardComponent, decorators: [{
-            type: Component,
-            args: [{ selector: 'polp-import-data-wizard', template: "<div class=\"card\" *ngIf=\"visible(0)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please review the data below, make changes, and then continue\n        to the next step.\n    </div>\n    <div class=\"card-body\">\n        <polp-data-processor [initData]=\"state.preprocessor.inputRows\"\n                             [columnNames]=\"state.preprocessor.cols\"\n                             (onReset)=\"resetPreprocessor()\"\n                             (dataChange)=\"updatePreprocessor($event)\">\n        </polp-data-processor>\n    </div>\n</div>\n\n<div class=\"card\" *ngIf=\"visible(1)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please define the mappings from source columns to target\n        columns, and then move to the next step.\n    </div>\n    <div class=\"card-body\">\n        <polp-define-column-mapping [sourceColumns]=\"sourceColumns\"\n                                    [targetColumns]=\"targetColumns\"\n                                    (onValueChanged)=\"updateMappings($event)\"\n                                    (onValidation)=\"validateMappings($event)\"\n                                    [initValue]=\"state.mappings\">\n        </polp-define-column-mapping>\n    </div>\n</div>\n\n<div class=\"card\" *ngIf=\"visible(1, 1)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please review the data below, make changes, and then continue\n        to the next step.\n    </div>\n    <div class=\"card-body\">\n        <polp-data-processor [initData]=\"state.postprocessor.inputRows\"\n                             [columnNames]=\"state.postprocessor.cols\"\n                             (onReset)=\"resetPostprocessor()\"\n                             (dataChange)=\"updatePostprocessor($event)\">\n        </polp-data-processor>\n    </div>\n</div>\n\n<div class=\"card\" *ngIf=\"visible(1, 1, 1)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please review the data below, and upload some or all of them.\n    </div>\n    <div class=\"card-body\">\n        <polp-data-publication [columnNames]=\"state.publication.cols\"\n                               [uploadAsync]=\"uploadAsync\"\n                               (onImport)=\"startImport()\"\n                               (afterImport)=\"updateImportStat($event)\"\n                               [initData]=\"state.publication.rows\">\n        </polp-data-publication>\n    </div>\n</div>\n\n<!-- Navigation -->\n<div class=\"d-flex mt-4 mb-4\">\n    <button type=\"button\" class=\"btn btn-warning\" [disabled]=\"disablePrevStep\"\n            *ngIf=\"hasPrevStep\" (click)=\"prevStep()\">\n        <fa-icon [icon]=\"faArrowLeft\"></fa-icon>\n        Previous\n    </button>\n    <span class=\"me-auto\"></span>    \n    <button type=\"button\" class=\"btn btn-primary\" [disabled]=\"disableNextStep\"\n            *ngIf=\"hasNextStep\" (click)=\"nextStep()\">\n        Next\n        <fa-icon [icon]=\"faArrowRight\"></fa-icon>                \n    </button>            \n</div>    \n", styles: [""] }]
-        }], ctorParameters: function () { return [{ type: i1.NgxNotyImpl }]; }, propDecorators: { file: [{
-                type: Input
-            }], targetColumns: [{
-                type: Input
-            }], uploadAsync: [{
-                type: Input
-            }] } });
+ImportDataWizardComponent.ɵfac = function ImportDataWizardComponent_Factory(t) { return new (t || ImportDataWizardComponent)(i0.ɵɵdirectiveInject(i1$1.NgxNotyImpl)); };
+ImportDataWizardComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: ImportDataWizardComponent, selectors: [["polp-import-data-wizard"]], inputs: { file: "file", targetColumns: "targetColumns", uploadAsync: "uploadAsync" }, features: [i0.ɵɵInheritDefinitionFeature], decls: 8, vars: 6, consts: [["class", "card", 4, "ngIf"], [1, "d-flex", "mt-4", "mb-4"], ["type", "button", "class", "btn btn-warning", 3, "disabled", "click", 4, "ngIf"], [1, "me-auto"], ["type", "button", "class", "btn btn-primary", 3, "disabled", "click", 4, "ngIf"], [1, "card"], [1, "card-header", "h6"], [1, "badge", "rounded-pill", "bg-dark", "me-1"], [1, "card-body"], [3, "initData", "columnNames", "onReset", "dataChange"], [3, "sourceColumns", "targetColumns", "initValue", "onValueChanged", "onValidation"], [3, "columnNames", "uploadAsync", "initData", "onImport", "afterImport"], ["type", "button", 1, "btn", "btn-warning", 3, "disabled", "click"], [3, "icon"], ["type", "button", 1, "btn", "btn-primary", 3, "disabled", "click"]], template: function ImportDataWizardComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵtemplate(0, ImportDataWizardComponent_div_0_Template, 7, 3, "div", 0);
+        i0.ɵɵtemplate(1, ImportDataWizardComponent_div_1_Template, 7, 4, "div", 0);
+        i0.ɵɵtemplate(2, ImportDataWizardComponent_div_2_Template, 7, 3, "div", 0);
+        i0.ɵɵtemplate(3, ImportDataWizardComponent_div_3_Template, 7, 4, "div", 0);
+        i0.ɵɵelementStart(4, "div", 1);
+        i0.ɵɵtemplate(5, ImportDataWizardComponent_button_5_Template, 3, 2, "button", 2);
+        i0.ɵɵelement(6, "span", 3);
+        i0.ɵɵtemplate(7, ImportDataWizardComponent_button_7_Template, 3, 2, "button", 4);
+        i0.ɵɵelementEnd();
+    } if (rf & 2) {
+        i0.ɵɵproperty("ngIf", ctx.visible(0));
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("ngIf", ctx.visible(1));
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("ngIf", ctx.visible(1, 1));
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("ngIf", ctx.visible(1, 1, 1));
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("ngIf", ctx.hasPrevStep);
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("ngIf", ctx.hasNextStep);
+    } }, dependencies: [i2.NgIf, i5.FaIconComponent, DefineColumnMappingComponent, DataPublicationComponent, DataProcessorComponent] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ImportDataWizardComponent, [{
+        type: Component,
+        args: [{ selector: 'polp-import-data-wizard', template: "<div class=\"card\" *ngIf=\"visible(0)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please review the data below, make changes, and then continue\n        to the next step.\n    </div>\n    <div class=\"card-body\">\n        <polp-data-processor [initData]=\"state.preprocessor.inputRows\"\n                             [columnNames]=\"state.preprocessor.cols\"\n                             (onReset)=\"resetPreprocessor()\"\n                             (dataChange)=\"updatePreprocessor($event)\">\n        </polp-data-processor>\n    </div>\n</div>\n\n<div class=\"card\" *ngIf=\"visible(1)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please define the mappings from source columns to target\n        columns, and then move to the next step.\n    </div>\n    <div class=\"card-body\">\n        <polp-define-column-mapping [sourceColumns]=\"sourceColumns\"\n                                    [targetColumns]=\"targetColumns\"\n                                    (onValueChanged)=\"updateMappings($event)\"\n                                    (onValidation)=\"validateMappings($event)\"\n                                    [initValue]=\"state.mappings\">\n        </polp-define-column-mapping>\n    </div>\n</div>\n\n<div class=\"card\" *ngIf=\"visible(1, 1)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please review the data below, make changes, and then continue\n        to the next step.\n    </div>\n    <div class=\"card-body\">\n        <polp-data-processor [initData]=\"state.postprocessor.inputRows\"\n                             [columnNames]=\"state.postprocessor.cols\"\n                             (onReset)=\"resetPostprocessor()\"\n                             (dataChange)=\"updatePostprocessor($event)\">\n        </polp-data-processor>\n    </div>\n</div>\n\n<div class=\"card\" *ngIf=\"visible(1, 1, 1)\">\n    <div class=\"card-header h6\">\n        <span class=\"badge rounded-pill bg-dark me-1\">Step {{stepIndex + 1}}</span>\n        Please review the data below, and upload some or all of them.\n    </div>\n    <div class=\"card-body\">\n        <polp-data-publication [columnNames]=\"state.publication.cols\"\n                               [uploadAsync]=\"uploadAsync\"\n                               (onImport)=\"startImport()\"\n                               (afterImport)=\"updateImportStat($event)\"\n                               [initData]=\"state.publication.rows\">\n        </polp-data-publication>\n    </div>\n</div>\n\n<!-- Navigation -->\n<div class=\"d-flex mt-4 mb-4\">\n    <button type=\"button\" class=\"btn btn-warning\" [disabled]=\"disablePrevStep\"\n            *ngIf=\"hasPrevStep\" (click)=\"prevStep()\">\n        <fa-icon [icon]=\"faArrowLeft\"></fa-icon>\n        Previous\n    </button>\n    <span class=\"me-auto\"></span>    \n    <button type=\"button\" class=\"btn btn-primary\" [disabled]=\"disableNextStep\"\n            *ngIf=\"hasNextStep\" (click)=\"nextStep()\">\n        Next\n        <fa-icon [icon]=\"faArrowRight\"></fa-icon>                \n    </button>            \n</div>    \n" }]
+    }], function () { return [{ type: i1$1.NgxNotyImpl }]; }, { file: [{
+            type: Input
+        }], targetColumns: [{
+            type: Input
+        }], uploadAsync: [{
+            type: Input
+        }] }); })();
 
+const _c0 = ["importDataWizard"];
 class ImportWizardModalComponent {
     constructor(bsModalRef, bsModalService) {
         this.bsModalRef = bsModalRef;
@@ -1211,23 +1953,43 @@ class ImportWizardModalComponent {
         this.bsModalRef.hide();
     }
 }
-ImportWizardModalComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: ImportWizardModalComponent, deps: [{ token: i1$2.BsModalRef }, { token: i1$2.BsModalService }], target: i0.ɵɵFactoryTarget.Component });
-ImportWizardModalComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.12", type: ImportWizardModalComponent, selector: "polp-import-wizard-modal", inputs: { file: "file", columns: "columns", uploadAsync: "uploadAsync", successCallback: "successCallback" }, viewQueries: [{ propertyName: "importDataWizard", first: true, predicate: ["importDataWizard"], descendants: true, static: true }], ngImport: i0, template: "<div class=\"modal-header\" polpModalDraggable>\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"close()\">\n    </button>\n</div>\n<div class=\"modal-body\">\n    <polp-import-data-wizard #importDataWizard\n                             [file]=\"file\"\n                             [targetColumns]=\"columns\"\n                             [uploadAsync]=\"uploadAsync\">\n    </polp-import-data-wizard>\n</div>\n", styles: [""], components: [{ type: ImportDataWizardComponent, selector: "polp-import-data-wizard", inputs: ["file", "targetColumns", "uploadAsync"] }], directives: [{ type: i3$1.polpModalDraggableDirective, selector: "[polpModalDraggable]" }] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: ImportWizardModalComponent, decorators: [{
-            type: Component,
-            args: [{ selector: 'polp-import-wizard-modal', template: "<div class=\"modal-header\" polpModalDraggable>\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"close()\">\n    </button>\n</div>\n<div class=\"modal-body\">\n    <polp-import-data-wizard #importDataWizard\n                             [file]=\"file\"\n                             [targetColumns]=\"columns\"\n                             [uploadAsync]=\"uploadAsync\">\n    </polp-import-data-wizard>\n</div>\n", styles: [""] }]
-        }], ctorParameters: function () { return [{ type: i1$2.BsModalRef }, { type: i1$2.BsModalService }]; }, propDecorators: { file: [{
-                type: Input
-            }], columns: [{
-                type: Input
-            }], uploadAsync: [{
-                type: Input
-            }], successCallback: [{
-                type: Input
-            }], importDataWizard: [{
-                type: ViewChild,
-                args: ['importDataWizard', { static: true }]
-            }] } });
+ImportWizardModalComponent.ɵfac = function ImportWizardModalComponent_Factory(t) { return new (t || ImportWizardModalComponent)(i0.ɵɵdirectiveInject(i1$3.BsModalRef), i0.ɵɵdirectiveInject(i1$3.BsModalService)); };
+ImportWizardModalComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: ImportWizardModalComponent, selectors: [["polp-import-wizard-modal"]], viewQuery: function ImportWizardModalComponent_Query(rf, ctx) { if (rf & 1) {
+        i0.ɵɵviewQuery(_c0, 7);
+    } if (rf & 2) {
+        let _t;
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.importDataWizard = _t.first);
+    } }, inputs: { file: "file", columns: "columns", uploadAsync: "uploadAsync", successCallback: "successCallback" }, decls: 7, vars: 4, consts: [["polpModalDraggable", "", 1, "modal-header"], [1, "modal-title"], ["type", "button", "aria-label", "Close", 1, "btn-close", 3, "click"], [1, "modal-body"], [3, "file", "targetColumns", "uploadAsync"], ["importDataWizard", ""]], template: function ImportWizardModalComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "div", 0)(1, "h4", 1);
+        i0.ɵɵtext(2);
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(3, "button", 2);
+        i0.ɵɵlistener("click", function ImportWizardModalComponent_Template_button_click_3_listener() { return ctx.close(); });
+        i0.ɵɵelementEnd()();
+        i0.ɵɵelementStart(4, "div", 3);
+        i0.ɵɵelement(5, "polp-import-data-wizard", 4, 5);
+        i0.ɵɵelementEnd();
+    } if (rf & 2) {
+        i0.ɵɵadvance(2);
+        i0.ɵɵtextInterpolate(ctx.title);
+        i0.ɵɵadvance(3);
+        i0.ɵɵproperty("file", ctx.file)("targetColumns", ctx.columns)("uploadAsync", ctx.uploadAsync);
+    } }, dependencies: [i2$2.polpModalDraggableDirective, ImportDataWizardComponent] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ImportWizardModalComponent, [{
+        type: Component,
+        args: [{ selector: 'polp-import-wizard-modal', template: "<div class=\"modal-header\" polpModalDraggable>\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"close()\">\n    </button>\n</div>\n<div class=\"modal-body\">\n    <polp-import-data-wizard #importDataWizard\n                             [file]=\"file\"\n                             [targetColumns]=\"columns\"\n                             [uploadAsync]=\"uploadAsync\">\n    </polp-import-data-wizard>\n</div>\n" }]
+    }], function () { return [{ type: i1$3.BsModalRef }, { type: i1$3.BsModalService }]; }, { file: [{
+            type: Input
+        }], columns: [{
+            type: Input
+        }], uploadAsync: [{
+            type: Input
+        }], successCallback: [{
+            type: Input
+        }], importDataWizard: [{
+            type: ViewChild,
+            args: ['importDataWizard', { static: true }]
+        }] }); })();
 
 class ModalUtilsService {
     constructor(_modalService) {
@@ -1296,19 +2058,77 @@ Please select one table question or none.
         return lastValueFrom(modalRef.content.result);
     }
 }
-ModalUtilsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: ModalUtilsService, deps: [{ token: i1$2.BsModalService }], target: i0.ɵɵFactoryTarget.Injectable });
-ModalUtilsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: ModalUtilsService, providedIn: 'root' });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: ModalUtilsService, decorators: [{
-            type: Injectable,
-            args: [{
-                    providedIn: 'root'
-                }]
-        }], ctorParameters: function () { return [{ type: i1$2.BsModalService }]; } });
+ModalUtilsService.ɵfac = function ModalUtilsService_Factory(t) { return new (t || ModalUtilsService)(i0.ɵɵinject(i1$3.BsModalService)); };
+ModalUtilsService.ɵprov = /*@__PURE__*/ i0.ɵɵdefineInjectable({ token: ModalUtilsService, factory: ModalUtilsService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ModalUtilsService, [{
+        type: Injectable,
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return [{ type: i1$3.BsModalService }]; }, null); })();
 
 class PolpDataTransportModule {
 }
-PolpDataTransportModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: PolpDataTransportModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-PolpDataTransportModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: PolpDataTransportModule, declarations: [DropFileModalComponent,
+PolpDataTransportModule.ɵfac = function PolpDataTransportModule_Factory(t) { return new (t || PolpDataTransportModule)(); };
+PolpDataTransportModule.ɵmod = /*@__PURE__*/ i0.ɵɵdefineNgModule({ type: PolpDataTransportModule });
+PolpDataTransportModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ imports: [CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ModalModule,
+        PopoverModule,
+        CollapseModule,
+        NgxFileDropModule,
+        PolpBsComponentsModule,
+        PolpDraggableModule,
+        FontAwesomeModule,
+        NgxDatatableModule,
+        PolpwareNgxPipesModule,
+        LogMonitorModule] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PolpDataTransportModule, [{
+        type: NgModule,
+        args: [{
+                declarations: [
+                    DropFileModalComponent,
+                    ImportDataWizardComponent,
+                    ImportWizardModalComponent,
+                    DefineColumnMappingComponent,
+                    DataStagingComponent,
+                    DataPublicationComponent,
+                    DataProcessorComponent,
+                    ExportDataWizardComponent,
+                    ExportWizardModalComponent,
+                    DataPreviewComponent
+                ],
+                imports: [
+                    CommonModule,
+                    FormsModule,
+                    ReactiveFormsModule,
+                    ModalModule,
+                    PopoverModule,
+                    CollapseModule,
+                    NgxFileDropModule,
+                    PolpBsComponentsModule,
+                    PolpDraggableModule,
+                    FontAwesomeModule,
+                    NgxDatatableModule,
+                    PolpwareNgxPipesModule,
+                    LogMonitorModule
+                ],
+                exports: [
+                    DropFileModalComponent,
+                    ImportDataWizardComponent,
+                    ImportWizardModalComponent,
+                    DefineColumnMappingComponent,
+                    DataStagingComponent,
+                    DataPublicationComponent,
+                    DataProcessorComponent,
+                    ExportDataWizardComponent,
+                    ExportWizardModalComponent,
+                    DataPreviewComponent
+                ]
+            }]
+    }], null, null); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(PolpDataTransportModule, { declarations: [DropFileModalComponent,
         ImportDataWizardComponent,
         ImportWizardModalComponent,
         DefineColumnMappingComponent,
@@ -1323,7 +2143,7 @@ PolpDataTransportModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0",
         ModalModule,
         PopoverModule,
         CollapseModule,
-        NgxDropzoneModule,
+        NgxFileDropModule,
         PolpBsComponentsModule,
         PolpDraggableModule,
         FontAwesomeModule,
@@ -1338,66 +2158,7 @@ PolpDataTransportModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0",
         DataProcessorComponent,
         ExportDataWizardComponent,
         ExportWizardModalComponent,
-        DataPreviewComponent] });
-PolpDataTransportModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: PolpDataTransportModule, imports: [[
-            CommonModule,
-            FormsModule,
-            ReactiveFormsModule,
-            ModalModule,
-            PopoverModule,
-            CollapseModule,
-            NgxDropzoneModule,
-            PolpBsComponentsModule,
-            PolpDraggableModule,
-            FontAwesomeModule,
-            NgxDatatableModule,
-            PolpwareNgxPipesModule,
-            LogMonitorModule
-        ]] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: PolpDataTransportModule, decorators: [{
-            type: NgModule,
-            args: [{
-                    declarations: [
-                        DropFileModalComponent,
-                        ImportDataWizardComponent,
-                        ImportWizardModalComponent,
-                        DefineColumnMappingComponent,
-                        DataStagingComponent,
-                        DataPublicationComponent,
-                        DataProcessorComponent,
-                        ExportDataWizardComponent,
-                        ExportWizardModalComponent,
-                        DataPreviewComponent
-                    ],
-                    imports: [
-                        CommonModule,
-                        FormsModule,
-                        ReactiveFormsModule,
-                        ModalModule,
-                        PopoverModule,
-                        CollapseModule,
-                        NgxDropzoneModule,
-                        PolpBsComponentsModule,
-                        PolpDraggableModule,
-                        FontAwesomeModule,
-                        NgxDatatableModule,
-                        PolpwareNgxPipesModule,
-                        LogMonitorModule
-                    ],
-                    exports: [
-                        DropFileModalComponent,
-                        ImportDataWizardComponent,
-                        ImportWizardModalComponent,
-                        DefineColumnMappingComponent,
-                        DataStagingComponent,
-                        DataPublicationComponent,
-                        DataProcessorComponent,
-                        ExportDataWizardComponent,
-                        ExportWizardModalComponent,
-                        DataPreviewComponent
-                    ]
-                }]
-        }] });
+        DataPreviewComponent] }); })();
 
 /*
  * Public API Surface of data-transport

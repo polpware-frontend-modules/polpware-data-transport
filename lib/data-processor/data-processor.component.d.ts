@@ -41,5 +41,5 @@ export declare class DataProcessorComponent extends NgxDatatableLocalData<IRowDa
     reset(): void;
     publish(event: ITableDataChangeEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataProcessorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataProcessorComponent, "polp-data-processor", never, { "initData": "initData"; "columnNames": "columnNames"; }, { "dataChange": "dataChange"; "onReset": "onReset"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataProcessorComponent, "polp-data-processor", never, { "initData": "initData"; "columnNames": "columnNames"; }, { "dataChange": "dataChange"; "onReset": "onReset"; }, never, never, false>;
 }

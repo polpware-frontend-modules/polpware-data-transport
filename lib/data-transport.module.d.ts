@@ -14,7 +14,7 @@ import * as i12 from "@angular/forms";
 import * as i13 from "ngx-bootstrap/modal";
 import * as i14 from "ngx-bootstrap/popover";
 import * as i15 from "ngx-bootstrap/collapse";
-import * as i16 from "ngx-dropzone";
+import * as i16 from "ngx-file-drop";
 import * as i17 from "@polpware/bs-components";
 import * as i18 from "@polpware/modal-directives";
 import * as i19 from "@fortawesome/angular-fontawesome";
@@ -23,6 +23,6 @@ import * as i21 from "@polpware/ngx-pipes";
 import * as i22 from "ngx-log-monitor";
 export declare class PolpDataTransportModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<PolpDataTransportModule, never>;
-    static ɵmod: i0.ɵɵNgModuleDeclaration<PolpDataTransportModule, [typeof i1.DropFileModalComponent, typeof i2.ImportDataWizardComponent, typeof i3.ImportWizardModalComponent, typeof i4.DefineColumnMappingComponent, typeof i5.DataStagingComponent, typeof i6.DataPublicationComponent, typeof i7.DataProcessorComponent, typeof i8.ExportDataWizardComponent, typeof i9.ExportWizardModalComponent, typeof i10.DataPreviewComponent], [typeof i11.CommonModule, typeof i12.FormsModule, typeof i12.ReactiveFormsModule, typeof i13.ModalModule, typeof i14.PopoverModule, typeof i15.CollapseModule, typeof i16.NgxDropzoneModule, typeof i17.PolpBsComponentsModule, typeof i18.PolpDraggableModule, typeof i19.FontAwesomeModule, typeof i20.NgxDatatableModule, typeof i21.PolpwareNgxPipesModule, typeof i22.LogMonitorModule], [typeof i1.DropFileModalComponent, typeof i2.ImportDataWizardComponent, typeof i3.ImportWizardModalComponent, typeof i4.DefineColumnMappingComponent, typeof i5.DataStagingComponent, typeof i6.DataPublicationComponent, typeof i7.DataProcessorComponent, typeof i8.ExportDataWizardComponent, typeof i9.ExportWizardModalComponent, typeof i10.DataPreviewComponent]>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<PolpDataTransportModule, [typeof i1.DropFileModalComponent, typeof i2.ImportDataWizardComponent, typeof i3.ImportWizardModalComponent, typeof i4.DefineColumnMappingComponent, typeof i5.DataStagingComponent, typeof i6.DataPublicationComponent, typeof i7.DataProcessorComponent, typeof i8.ExportDataWizardComponent, typeof i9.ExportWizardModalComponent, typeof i10.DataPreviewComponent], [typeof i11.CommonModule, typeof i12.FormsModule, typeof i12.ReactiveFormsModule, typeof i13.ModalModule, typeof i14.PopoverModule, typeof i15.CollapseModule, typeof i16.NgxFileDropModule, typeof i17.PolpBsComponentsModule, typeof i18.PolpDraggableModule, typeof i19.FontAwesomeModule, typeof i20.NgxDatatableModule, typeof i21.PolpwareNgxPipesModule, typeof i22.LogMonitorModule], [typeof i1.DropFileModalComponent, typeof i2.ImportDataWizardComponent, typeof i3.ImportWizardModalComponent, typeof i4.DefineColumnMappingComponent, typeof i5.DataStagingComponent, typeof i6.DataPublicationComponent, typeof i7.DataProcessorComponent, typeof i8.ExportDataWizardComponent, typeof i9.ExportWizardModalComponent, typeof i10.DataPreviewComponent]>;
     static ɵinj: i0.ɵɵInjectorDeclaration<PolpDataTransportModule>;
 }

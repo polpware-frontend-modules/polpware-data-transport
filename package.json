@@ -1,24 +1,24 @@
 {
   "name": "@polpware/data-transport",
-  "version": "13.0.0",
+  "version": "14.0.0",
   "peerDependencies": {
-    "@angular/common": "^13.0.0",
-    "@angular/core": "^13.0.0",
-    "@angular/forms": "^13.0.0",
-    "@fortawesome/angular-fontawesome": "~0.10.2",
-    "@fortawesome/fontawesome-svg-core": "~6.1.1",
-    "@fortawesome/free-regular-svg-icons": "~6.1.1",
-    "@fortawesome/free-solid-svg-icons": "~6.1.1",
-    "@polpware/ngx-directives": "^13.0.0",
-    "@polpware/ngx-logger": "^13.0.0",
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "@angular/forms": "^14.0.0",
+    "@fortawesome/angular-fontawesome": "~0.11.x",
+    "@fortawesome/fontawesome-svg-core": "~6.7.2",
+    "@fortawesome/free-regular-svg-icons": "~6.7.2",
+    "@fortawesome/free-solid-svg-icons": "~6.7.2",
+    "@polpware/ngx-directives": "^14.0.0",
+    "@polpware/ngx-logger": "^14.0.0",
     "@polpware/ngx-noty": "^13.0.0",
-    "@polpware/ngx-pipes": "^13.0.0",
-    "@polpware/ngx-reactive-table": "^13.0.0",
+    "@polpware/ngx-pipes": "^14.0.0",
+    "@polpware/ngx-reactive-table": "^14.0.0",
     "@polpware/ngx-wizard": "^13.0.0",
-    "@swimlane/ngx-datatable": "^20.0.0",
-    "ngx-bootstrap": "^8.0.0",
-    "ngx-dropzone": "^3.1.0",
-    "ngx-log-monitor": "^1.2.0",
+    "@swimlane/ngx-datatable": "^20.1.0",
+    "ngx-bootstrap": "~9.0.0",
+    "ngx-file-drop": "~14.0.0",
+    "ngx-log-monitor": "^14.0.0",
     "read-excel-file": "^5.4.4",
     "write-excel-file": "^1.4.9"
   },
@@ -30,13 +30,13 @@
   "esm2020": "esm2020/polpware-data-transport.mjs",
   "fesm2020": "fesm2020/polpware-data-transport.mjs",
   "fesm2015": "fesm2015/polpware-data-transport.mjs",
-  "typings": "polpware-data-transport.d.ts",
+  "typings": "index.d.ts",
   "exports": {
     "./package.json": {
       "default": "./package.json"
     },
     ".": {
-      "types": "./polpware-data-transport.d.ts",
+      "types": "./index.d.ts",
       "esm2020": "./esm2020/polpware-data-transport.mjs",
       "es2020": "./fesm2020/polpware-data-transport.mjs",
       "es2015": "./fesm2015/polpware-data-transport.mjs",
@@ -44,5 +44,8 @@
       "default": "./fesm2020/polpware-data-transport.mjs"
     }
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy in full compilation mode. This is not allowed.\\nPlease delete and rebuild the package with Ivy partial compilation mode, before attempting to publish.\\n')\" && exit 1"
+  }
 }

@@ -5,10 +5,14 @@ export class DataStagingComponent {
     ngOnInit() {
     }
 }
-DataStagingComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DataStagingComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-DataStagingComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.12", type: DataStagingComponent, selector: "polp-data-staging", ngImport: i0, template: "<p>data-staging works!</p>\n", styles: [""] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.12", ngImport: i0, type: DataStagingComponent, decorators: [{
-            type: Component,
-            args: [{ selector: 'polp-data-staging', template: "<p>data-staging works!</p>\n", styles: [""] }]
-        }], ctorParameters: function () { return []; } });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGF0YS1zdGFnaW5nLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3BvbHB3YXJlL2RhdGEtdHJhbnNwb3J0L3NyYy9saWIvZGF0YS1zdGFnaW5nL2RhdGEtc3RhZ2luZy5jb21wb25lbnQudHMiLCIuLi8uLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9wb2xwd2FyZS9kYXRhLXRyYW5zcG9ydC9zcmMvbGliL2RhdGEtc3RhZ2luZy9kYXRhLXN0YWdpbmcuY29tcG9uZW50Lmh0bWwiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxNQUFNLGVBQWUsQ0FBQzs7QUFPbEQsTUFBTSxPQUFPLG9CQUFvQjtJQUUvQixnQkFBZ0IsQ0FBQztJQUVqQixRQUFRO0lBQ1IsQ0FBQzs7a0hBTFUsb0JBQW9CO3NHQUFwQixvQkFBb0IseURDUGpDLDhCQUNBOzRGRE1hLG9CQUFvQjtrQkFMaEMsU0FBUzsrQkFDRSxtQkFBbUIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIE9uSW5pdCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdwb2xwLWRhdGEtc3RhZ2luZycsXG4gIHRlbXBsYXRlVXJsOiAnLi9kYXRhLXN0YWdpbmcuY29tcG9uZW50Lmh0bWwnLFxuICBzdHlsZVVybHM6IFsnLi9kYXRhLXN0YWdpbmcuY29tcG9uZW50LmNzcyddXG59KVxuZXhwb3J0IGNsYXNzIERhdGFTdGFnaW5nQ29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcblxuICBjb25zdHJ1Y3RvcigpIHsgfVxuXG4gIG5nT25Jbml0KCk6IHZvaWQge1xuICB9XG5cbn1cbiIsIjxwPmRhdGEtc3RhZ2luZyB3b3JrcyE8L3A+XG4iXX0=
+DataStagingComponent.ɵfac = function DataStagingComponent_Factory(t) { return new (t || DataStagingComponent)(); };
+DataStagingComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: DataStagingComponent, selectors: [["polp-data-staging"]], decls: 2, vars: 0, template: function DataStagingComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "p");
+        i0.ɵɵtext(1, "data-staging works!");
+        i0.ɵɵelementEnd();
+    } } });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DataStagingComponent, [{
+        type: Component,
+        args: [{ selector: 'polp-data-staging', template: "<p>data-staging works!</p>\n" }]
+    }], function () { return []; }, null); })();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGF0YS1zdGFnaW5nLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3BvbHB3YXJlL2RhdGEtdHJhbnNwb3J0L3NyYy9saWIvZGF0YS1zdGFnaW5nL2RhdGEtc3RhZ2luZy5jb21wb25lbnQudHMiLCIuLi8uLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9wb2xwd2FyZS9kYXRhLXRyYW5zcG9ydC9zcmMvbGliL2RhdGEtc3RhZ2luZy9kYXRhLXN0YWdpbmcuY29tcG9uZW50Lmh0bWwiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxNQUFNLGVBQWUsQ0FBQzs7QUFPbEQsTUFBTSxPQUFPLG9CQUFvQjtJQUUvQixnQkFBZ0IsQ0FBQztJQUVqQixRQUFRO0lBQ1IsQ0FBQzs7d0ZBTFUsb0JBQW9CO3VFQUFwQixvQkFBb0I7UUNQakMseUJBQUc7UUFBQSxtQ0FBbUI7UUFBQSxpQkFBSTs7dUZET2Isb0JBQW9CO2NBTGhDLFNBQVM7MkJBQ0UsbUJBQW1CIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50LCBPbkluaXQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAncG9scC1kYXRhLXN0YWdpbmcnLFxuICB0ZW1wbGF0ZVVybDogJy4vZGF0YS1zdGFnaW5nLmNvbXBvbmVudC5odG1sJyxcbiAgc3R5bGVVcmxzOiBbJy4vZGF0YS1zdGFnaW5nLmNvbXBvbmVudC5jc3MnXVxufSlcbmV4cG9ydCBjbGFzcyBEYXRhU3RhZ2luZ0NvbXBvbmVudCBpbXBsZW1lbnRzIE9uSW5pdCB7XG5cbiAgY29uc3RydWN0b3IoKSB7IH1cblxuICBuZ09uSW5pdCgpOiB2b2lkIHtcbiAgfVxuXG59XG4iLCI8cD5kYXRhLXN0YWdpbmcgd29ya3MhPC9wPlxuIl19
