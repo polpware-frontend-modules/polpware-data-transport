@@ -14,5 +14,5 @@ export declare class DataPreviewComponent extends NgxDatatablePoweredBase<IRowDa
     ngOnChanges(changes: SimpleChanges): void;
     buildColumns(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataPreviewComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataPreviewComponent, "polp-data-preview", never, { "initData": "initData"; "columnNames": "columnNames"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataPreviewComponent, "polp-data-preview", never, { "initData": "initData"; "columnNames": "columnNames"; }, {}, never, never, false, never>;
 }

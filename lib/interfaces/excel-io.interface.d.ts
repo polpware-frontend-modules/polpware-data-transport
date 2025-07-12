@@ -1,7 +1,7 @@
-export declare type ExcelOutputRowType = {
+export type ExcelOutputRowType = {
     [key: string]: any;
 };
-export declare type ExcelOutputSheetRows = Array<ExcelOutputRowType>;
+export type ExcelOutputSheetRows = Array<ExcelOutputRowType>;
 export interface IExcelOutputColumnSchema<T> {
     column: string;
     type?: T;
@@ -9,7 +9,7 @@ export interface IExcelOutputColumnSchema<T> {
     width?: number;
     value: (a: ExcelOutputRowType) => T;
 }
-export declare type ExcelOutputSheetSchema = Array<IExcelOutputColumnSchema<any>>;
+export type ExcelOutputSheetSchema = Array<IExcelOutputColumnSchema<any>>;
 export interface IDownloadOutput<T> {
     totalCount: number;
     items: Array<T>;
@@ -18,4 +18,4 @@ export interface IDownloadInput {
     pageSize: number;
     pageIndex: number;
 }
-export declare type DownloadFuncType = (a: IDownloadInput) => Promise<IDownloadOutput<any>>;
+export type DownloadFuncType = (a: IDownloadInput) => Promise<IDownloadOutput<any>>;
