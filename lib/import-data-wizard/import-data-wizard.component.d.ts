@@ -88,6 +88,6 @@ export declare class ImportDataWizardComponent extends WizardAbstractComponent i
         failure: number;
     }): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImportDataWizardComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImportDataWizardComponent, "polp-import-data-wizard", never, { "file": "file"; "targetColumns": "targetColumns"; "uploadAsync": "uploadAsync"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImportDataWizardComponent, "polp-import-data-wizard", never, { "file": { "alias": "file"; "required": false; }; "targetColumns": { "alias": "targetColumns"; "required": false; }; "uploadAsync": { "alias": "uploadAsync"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

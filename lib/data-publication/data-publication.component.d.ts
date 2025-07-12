@@ -50,6 +50,6 @@ export declare class DataPublicationComponent extends NgxDatatableLocalData<IPub
     uploadAllAsync(): Promise<void>;
     invokeUploadAsync(data: Array<IPubRowType>): Promise<boolean>;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataPublicationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataPublicationComponent, "polp-data-publication", never, { "initData": "initData"; "columnNames": "columnNames"; "uploadAsync": "uploadAsync"; }, { "onImport": "onImport"; "afterImport": "afterImport"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataPublicationComponent, "polp-data-publication", never, { "initData": { "alias": "initData"; "required": false; }; "columnNames": { "alias": "columnNames"; "required": false; }; "uploadAsync": { "alias": "uploadAsync"; "required": false; }; }, { "onImport": "onImport"; "afterImport": "afterImport"; }, never, never, false, never>;
 }
 export {};

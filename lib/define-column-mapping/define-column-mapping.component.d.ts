@@ -27,5 +27,5 @@ export declare class DefineColumnMappingComponent extends DefaultFormBaseCompone
     ngOnDestroy(): void;
     sourceLabel(i: number): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<DefineColumnMappingComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DefineColumnMappingComponent, "polp-define-column-mapping", never, { "sourceColumns": "sourceColumns"; "targetColumns": "targetColumns"; "initValue": "initValue"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DefineColumnMappingComponent, "polp-define-column-mapping", never, { "sourceColumns": { "alias": "sourceColumns"; "required": false; }; "targetColumns": { "alias": "targetColumns"; "required": false; }; "initValue": { "alias": "initValue"; "required": false; }; }, {}, never, never, false, never>;
 }

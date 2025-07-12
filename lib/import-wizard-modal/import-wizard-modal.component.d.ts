@@ -36,5 +36,5 @@ export declare class ImportWizardModalComponent implements OnInit {
     ngOnInit(): void;
     close(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImportWizardModalComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImportWizardModalComponent, "polp-import-wizard-modal", never, { "file": "file"; "columns": "columns"; "uploadAsync": "uploadAsync"; "successCallback": "successCallback"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImportWizardModalComponent, "polp-import-wizard-modal", never, { "file": { "alias": "file"; "required": false; }; "columns": { "alias": "columns"; "required": false; }; "uploadAsync": { "alias": "uploadAsync"; "required": false; }; "successCallback": { "alias": "successCallback"; "required": false; }; }, {}, never, never, false, never>;
 }

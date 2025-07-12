@@ -24,5 +24,5 @@ export declare class ExportWizardModalComponent implements OnInit {
     ngOnInit(): void;
     close(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ExportWizardModalComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ExportWizardModalComponent, "polp-export-wizard-modal", never, { "columns": "columns"; "downloadAsync": "downloadAsync"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ExportWizardModalComponent, "polp-export-wizard-modal", never, { "columns": { "alias": "columns"; "required": false; }; "downloadAsync": { "alias": "downloadAsync"; "required": false; }; }, {}, never, never, false, never>;
 }

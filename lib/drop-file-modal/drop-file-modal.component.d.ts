@@ -25,5 +25,5 @@ export declare class DropFileModalComponent extends ObservableModalAbstractCompo
     confirm(): void;
     close(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DropFileModalComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DropFileModalComponent, "polp-drop-file-modal", never, { "multiple": "multiple"; "accept": "accept"; "maxFileSizeInBytes": "maxFileSizeInBytes"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DropFileModalComponent, "polp-drop-file-modal", never, { "multiple": { "alias": "multiple"; "required": false; }; "accept": { "alias": "accept"; "required": false; }; "maxFileSizeInBytes": { "alias": "maxFileSizeInBytes"; "required": false; }; }, {}, never, never, false, never>;
 }
