@@ -1,6 +1,6 @@
 {
   "name": "@polpware/data-transport",
-  "version": "15.0.0",
+  "version": "15.0.1",
   "peerDependencies": {
     "@angular/common": "^15.0.0",
     "@angular/core": "^15.0.0",
@@ -11,10 +11,10 @@
     "@fortawesome/free-solid-svg-icons": "~6.7.2",
     "@polpware/ngx-directives": "^15.0.0",
     "@polpware/ngx-logger": "^15.0.0",
-    "@polpware/ngx-noty": "^13.0.0",
+    "@polpware/ngx-noty": "^15.0.0",
     "@polpware/ngx-pipes": "^15.0.0",
     "@polpware/ngx-reactive-table": "^15.0.0",
-    "@polpware/ngx-wizard": "^13.0.0",
+    "@polpware/ngx-wizard": "^15.0.0",
     "@swimlane/ngx-datatable": "^20.1.0",
     "ngx-bootstrap": "^10.0.0",
     "ngx-file-drop": "~15.0.0",
