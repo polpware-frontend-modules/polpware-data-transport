@@ -80,7 +80,7 @@ class DataPreviewComponent extends NgxDatatablePoweredBase {
         this.columns = columns;
         this.rows = this.initData;
     }
-    static { this.ɵfac = function DataPreviewComponent_Factory(t) { return new (t || DataPreviewComponent)(); }; }
+    static { this.ɵfac = function DataPreviewComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || DataPreviewComponent)(); }; }
     static { this.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: DataPreviewComponent, selectors: [["polp-data-preview"]], viewQuery: function DataPreviewComponent_Query(rf, ctx) { if (rf & 1) {
             i0.ɵɵviewQuery(_c0$3, 7);
             i0.ɵɵviewQuery(_c1$2, 7);
@@ -420,7 +420,7 @@ let DataProcessorComponent = class DataProcessorComponent extends NgxDatatableLo
         // Notify client 
         this.dataChange.emit(Object.assign({}, event, { rows: this.originalRows }));
     }
-    static { this.ɵfac = function DataProcessorComponent_Factory(t) { return new (t || DataProcessorComponent)(i0.ɵɵdirectiveInject(i1$1.NgxNotyImpl)); }; }
+    static { this.ɵfac = function DataProcessorComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || DataProcessorComponent)(i0.ɵɵdirectiveInject(i1$1.NgxNotyImpl)); }; }
     static { this.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: DataProcessorComponent, selectors: [["polp-data-processor"]], viewQuery: function DataProcessorComponent_Query(rf, ctx) { if (rf & 1) {
             i0.ɵɵviewQuery(_c0$2, 7);
             i0.ɵɵviewQuery(_c1$1, 7);
@@ -557,7 +557,7 @@ function DataPublicationComponent_ng_template_28_span_2_Template(rf, ctx) { if (
 } if (rf & 2) {
     const ctx_r7 = i0.ɵɵnextContext(2);
     i0.ɵɵadvance();
-    i0.ɵɵproperty("icon", ctx_r7.faHourglass)("spin", true);
+    i0.ɵɵproperty("icon", ctx_r7.faHourglass);
 } }
 function DataPublicationComponent_ng_template_28_span_3_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "span", 33);
@@ -579,7 +579,7 @@ function DataPublicationComponent_ng_template_28_span_4_Template(rf, ctx) { if (
 } }
 function DataPublicationComponent_ng_template_28_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementContainerStart(0, 26);
-    i0.ɵɵtemplate(1, DataPublicationComponent_ng_template_28_span_1_Template, 2, 1, "span", 27)(2, DataPublicationComponent_ng_template_28_span_2_Template, 2, 2, "span", 27)(3, DataPublicationComponent_ng_template_28_span_3_Template, 2, 1, "span", 28)(4, DataPublicationComponent_ng_template_28_span_4_Template, 2, 1, "span", 29);
+    i0.ɵɵtemplate(1, DataPublicationComponent_ng_template_28_span_1_Template, 2, 1, "span", 27)(2, DataPublicationComponent_ng_template_28_span_2_Template, 2, 1, "span", 27)(3, DataPublicationComponent_ng_template_28_span_3_Template, 2, 1, "span", 28)(4, DataPublicationComponent_ng_template_28_span_4_Template, 2, 1, "span", 29);
     i0.ɵɵelementContainerEnd();
 } if (rf & 2) {
     const value_r9 = ctx.value;
@@ -828,7 +828,7 @@ let DataPublicationComponent = class DataPublicationComponent extends NgxDatatab
         }
         return noError;
     }
-    static { this.ɵfac = function DataPublicationComponent_Factory(t) { return new (t || DataPublicationComponent)(i0.ɵɵdirectiveInject(i1$1.NgxNotyImpl)); }; }
+    static { this.ɵfac = function DataPublicationComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || DataPublicationComponent)(i0.ɵɵdirectiveInject(i1$1.NgxNotyImpl)); }; }
     static { this.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: DataPublicationComponent, selectors: [["polp-data-publication"]], viewQuery: function DataPublicationComponent_Query(rf, ctx) { if (rf & 1) {
             i0.ɵɵviewQuery(_c0$1, 7);
             i0.ɵɵviewQuery(_c1, 7);
@@ -844,7 +844,7 @@ let DataPublicationComponent = class DataPublicationComponent extends NgxDatatab
             i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.stateCellTmpl = _t.first);
             i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.titleCellTmpl = _t.first);
             i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.inputCellTmpl = _t.first);
-        } }, inputs: { initData: "initData", columnNames: "columnNames", uploadAsync: "uploadAsync" }, outputs: { onImport: "onImport", afterImport: "afterImport" }, features: [i0.ɵɵInheritDefinitionFeature], decls: 30, vars: 21, consts: [["searchBox4DataPub", ""], ["datatable", ""], ["titleHeader", ""], ["inputCell", ""], ["stateHeader", ""], ["stateCell", ""], [1, "card"], [1, "card-body"], ["role", "toolbar", "aria-label", "Operations", 1, "btn-toolbar", "mb-4"], ["role", "group", "aria-label", "Upload", 1, "btn-group", "me-2"], ["role", "button", 1, "btn", "btn-success", 3, "click", "disabled"], [1, "me-1", 3, "icon"], ["role", "button", 1, "btn", "btn-info", 3, "click", "disabled"], ["role", "button", 1, "btn", "btn-warning", 3, "click", "disabled"], [3, "isCollapsed"], ["title", ""], ["body", "", 1, "container"], ["theme", "dark", "title", "logs", 3, "logStream", "animated", "icons"], ["formClass", "border rounded my-2 py-4 px-4 bg-light", 3, "onSearch", "debounceTime", "minLength"], ["headerHeight", "auto", "rowHeight", "auto", 1, "bootstrap", 3, "select", "rows", "columns", "columnMode", "footerHeight", "limit", "scrollbarH", "selected", "selectionType", "selectAllRowsOnPage"], [1, "fw-bold", "text-wrap", 3, "innerHTML"], [3, "innerHTML", 4, "ngIf"], ["autofocus", "", 3, "type", "value", "blur", 4, "ngIf"], [3, "innerHTML"], ["autofocus", "", 3, "blur", "type", "value"], [1, "fw-bold", "text-warp"], [3, "ngSwitch"], ["class", "text-info", 4, "ngSwitchCase"], ["class", "text-success", 4, "ngSwitchCase"], ["class", "text-danger", 4, "ngSwitchCase"], [1, "text-info"], [3, "icon"], [3, "icon", "spin"], [1, "text-success"], [1, "text-danger"]], template: function DataPublicationComponent_Template(rf, ctx) { if (rf & 1) {
+        } }, inputs: { initData: "initData", columnNames: "columnNames", uploadAsync: "uploadAsync" }, outputs: { onImport: "onImport", afterImport: "afterImport" }, features: [i0.ɵɵInheritDefinitionFeature], decls: 30, vars: 21, consts: [["searchBox4DataPub", ""], ["datatable", ""], ["titleHeader", ""], ["inputCell", ""], ["stateHeader", ""], ["stateCell", ""], [1, "card"], [1, "card-body"], ["role", "toolbar", "aria-label", "Operations", 1, "btn-toolbar", "mb-4"], ["role", "group", "aria-label", "Upload", 1, "btn-group", "me-2"], ["role", "button", 1, "btn", "btn-success", 3, "click", "disabled"], [1, "me-1", 3, "icon"], ["role", "button", 1, "btn", "btn-info", 3, "click", "disabled"], ["role", "button", 1, "btn", "btn-warning", 3, "click", "disabled"], [3, "isCollapsed"], ["title", ""], ["body", "", 1, "container"], ["theme", "dark", "title", "logs", 3, "logStream", "animated", "icons"], ["formClass", "border rounded my-2 py-4 px-4 bg-light", 3, "onSearch", "debounceTime", "minLength"], ["headerHeight", "auto", "rowHeight", "auto", 1, "bootstrap", 3, "select", "rows", "columns", "columnMode", "footerHeight", "limit", "scrollbarH", "selected", "selectionType", "selectAllRowsOnPage"], [1, "fw-bold", "text-wrap", 3, "innerHTML"], [3, "innerHTML", 4, "ngIf"], ["autofocus", "", 3, "type", "value", "blur", 4, "ngIf"], [3, "innerHTML"], ["autofocus", "", 3, "blur", "type", "value"], [1, "fw-bold", "text-warp"], [3, "ngSwitch"], ["class", "text-info", 4, "ngSwitchCase"], ["class", "text-success", 4, "ngSwitchCase"], ["class", "text-danger", 4, "ngSwitchCase"], [1, "text-info"], [3, "icon"], ["faSpin", "", 3, "icon"], [1, "text-success"], [1, "text-danger"]], template: function DataPublicationComponent_Template(rf, ctx) { if (rf & 1) {
             const _r1 = i0.ɵɵgetCurrentView();
             i0.ɵɵelementStart(0, "div", 6)(1, "div", 7)(2, "div", 8)(3, "div", 9)(4, "button", 10);
             i0.ɵɵlistener("click", function DataPublicationComponent_Template_button_click_4_listener() { i0.ɵɵrestoreView(_r1); return i0.ɵɵresetView(ctx.uploadSelectedAsync()); });
@@ -903,7 +903,7 @@ DataPublicationComponent = __decorate([
 ], DataPublicationComponent);
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DataPublicationComponent, [{
         type: Component,
-        args: [{ selector: 'polp-data-publication', template: "<div class=\"card\">\n    <div class=\"card-body\">\n\n        <div class=\"btn-toolbar mb-4\" role=\"toolbar\" aria-label=\"Operations\">\n            <div class=\"btn-group me-2\" role=\"group\" aria-label=\"Upload\">\n                <button class=\"btn btn-success\" role=\"button\" (click)=\"uploadSelectedAsync()\" [disabled]=\"selected.length <= 0\">\n                    <fa-icon [icon]=\"faArrowUp\" class=\"me-1\"></fa-icon>\n                    Upload selected\n                </button>\n                <button class=\"btn btn-info\" role=\"button\" (click)=\"uploadAllAsync()\" [disabled]=\"anyKeyword\">\n                    <fa-icon [icon]=\"faArrowCircleUp\" class=\"me-1\"></fa-icon>\n                    Upload all\n                </button>\n                <button class=\"btn btn-warning\" role=\"button\" (click)=\"uploadAllAsync()\" [disabled]=\"!anyKeyword\">\n                    <fa-icon [icon]=\"faArrowCircleUp\" class=\"me-1\"></fa-icon>\n                    Upload filtered\n                </button>\n            </div>\n        </div>\n\n        <polp-bs-expandable-card [isCollapsed]=\"!showLogs\">\n            <span title>\n                Data import logs\n            </span>\n            <div class=\"container\" body>\n                <log-monitor\n                    [logStream]=\"logStream\"\n                    theme=\"dark\"\n                    title=\"logs\"\n                    [animated]=\"true\"\n                    [icons]=\"true\">\n                </log-monitor>\n            </div>\n        </polp-bs-expandable-card>\n\n        <polp-bs-search-box-widget #searchBox4DataPub\n                                   [debounceTime]=\"200\"\n                                   [minLength]=\"2\"\n                                   formClass=\"border rounded my-2 py-4 px-4 bg-light\"\n                                   (onSearch)=\"kickOffSearch()\">\n        </polp-bs-search-box-widget>\n                    \n        <ngx-datatable #datatable\n            class=\"bootstrap\"\n            [rows]=\"rows\"\n            [columns]=\"columns\"\n            [columnMode]=\"ColumnMode.force\"\n            headerHeight=\"auto\"\n            [footerHeight]=\"50\"\n            rowHeight=\"auto\"\n            [limit]=\"pageSize\"\n            [scrollbarH]=\"true\"\n            [selected]=\"selected\"\n            [selectionType]=\"SelectionType.checkbox\"\n            [selectAllRowsOnPage]=\"true\"\n            (select)=\"onSelect($event)\">\n        </ngx-datatable>\n\n        <ng-template #titleHeader let-column=\"column\">\n            <div [innerHTML]=\"column.name\" class=\"fw-bold text-wrap\"></div>\n        </ng-template>\n\n        <ng-template #inputCell let-rowIndex=\"rowIndex\" let-row=\"row\" let-column=\"column\" let-value=\"value\">\n            <span *ngIf=\"!editing[rowIndex + '-' + column.prop]\" [innerHTML]=\"value\">\n            </span>\n            <input autofocus\n                   *ngIf=\"editing[rowIndex + '-' + column.prop]\"\n                   [type]=\"column.inputType\"\n                   [value]=\"value\"\n                   (blur)=\"updateValue($event, column.prop, rowIndex)\"\n            />            \n        </ng-template>\n\n        <ng-template #stateHeader let-column=\"column\">\n            <span class=\"fw-bold text-warp\">\n                State\n            </span>\n        </ng-template>\n\n        <ng-template #stateCell let-value=\"value\">\n            <ng-container [ngSwitch]=\"value\">\n                <span class=\"text-info\" *ngSwitchCase=\"'waiting'\">\n                    <fa-icon [icon]=\"faHourglass\">\n                    </fa-icon>\n                </span>\n                <span class=\"text-info\" *ngSwitchCase=\"'working'\">\n                    <fa-icon [icon]=\"faHourglass\" [spin]=\"true\">\n                    </fa-icon>\n                </span>\n                <span class=\"text-success\" *ngSwitchCase=\"'success'\">\n                    <fa-icon [icon]=\"faCheck\" >\n                    </fa-icon>\n                </span>\n                <span class=\"text-danger\" *ngSwitchCase=\"'failure'\">\n                    <fa-icon [icon]=\"faTimes\">\n                    </fa-icon>\n                </span>\n            </ng-container>\n        </ng-template>\n    </div>\n</div>\n\n" }]
+        args: [{ selector: 'polp-data-publication', template: "<div class=\"card\">\n    <div class=\"card-body\">\n\n        <div class=\"btn-toolbar mb-4\" role=\"toolbar\" aria-label=\"Operations\">\n            <div class=\"btn-group me-2\" role=\"group\" aria-label=\"Upload\">\n                <button class=\"btn btn-success\" role=\"button\" (click)=\"uploadSelectedAsync()\" [disabled]=\"selected.length <= 0\">\n                    <fa-icon [icon]=\"faArrowUp\" class=\"me-1\"></fa-icon>\n                    Upload selected\n                </button>\n                <button class=\"btn btn-info\" role=\"button\" (click)=\"uploadAllAsync()\" [disabled]=\"anyKeyword\">\n                    <fa-icon [icon]=\"faArrowCircleUp\" class=\"me-1\"></fa-icon>\n                    Upload all\n                </button>\n                <button class=\"btn btn-warning\" role=\"button\" (click)=\"uploadAllAsync()\" [disabled]=\"!anyKeyword\">\n                    <fa-icon [icon]=\"faArrowCircleUp\" class=\"me-1\"></fa-icon>\n                    Upload filtered\n                </button>\n            </div>\n        </div>\n\n        <polp-bs-expandable-card [isCollapsed]=\"!showLogs\">\n            <span title>\n                Data import logs\n            </span>\n            <div class=\"container\" body>\n                <log-monitor\n                    [logStream]=\"logStream\"\n                    theme=\"dark\"\n                    title=\"logs\"\n                    [animated]=\"true\"\n                    [icons]=\"true\">\n                </log-monitor>\n            </div>\n        </polp-bs-expandable-card>\n\n        <polp-bs-search-box-widget #searchBox4DataPub\n                                   [debounceTime]=\"200\"\n                                   [minLength]=\"2\"\n                                   formClass=\"border rounded my-2 py-4 px-4 bg-light\"\n                                   (onSearch)=\"kickOffSearch()\">\n        </polp-bs-search-box-widget>\n                    \n        <ngx-datatable #datatable\n            class=\"bootstrap\"\n            [rows]=\"rows\"\n            [columns]=\"columns\"\n            [columnMode]=\"ColumnMode.force\"\n            headerHeight=\"auto\"\n            [footerHeight]=\"50\"\n            rowHeight=\"auto\"\n            [limit]=\"pageSize\"\n            [scrollbarH]=\"true\"\n            [selected]=\"selected\"\n            [selectionType]=\"SelectionType.checkbox\"\n            [selectAllRowsOnPage]=\"true\"\n            (select)=\"onSelect($event)\">\n        </ngx-datatable>\n\n        <ng-template #titleHeader let-column=\"column\">\n            <div [innerHTML]=\"column.name\" class=\"fw-bold text-wrap\"></div>\n        </ng-template>\n\n        <ng-template #inputCell let-rowIndex=\"rowIndex\" let-row=\"row\" let-column=\"column\" let-value=\"value\">\n            <span *ngIf=\"!editing[rowIndex + '-' + column.prop]\" [innerHTML]=\"value\">\n            </span>\n            <input autofocus\n                   *ngIf=\"editing[rowIndex + '-' + column.prop]\"\n                   [type]=\"column.inputType\"\n                   [value]=\"value\"\n                   (blur)=\"updateValue($event, column.prop, rowIndex)\"\n            />            \n        </ng-template>\n\n        <ng-template #stateHeader let-column=\"column\">\n            <span class=\"fw-bold text-warp\">\n                State\n            </span>\n        </ng-template>\n\n        <ng-template #stateCell let-value=\"value\">\n            <ng-container [ngSwitch]=\"value\">\n                <span class=\"text-info\" *ngSwitchCase=\"'waiting'\">\n                    <fa-icon [icon]=\"faHourglass\">\n                    </fa-icon>\n                </span>\n                <span class=\"text-info\" *ngSwitchCase=\"'working'\">\n                    <fa-icon [icon]=\"faHourglass\" faSpin>\n                    </fa-icon>\n                </span>\n                <span class=\"text-success\" *ngSwitchCase=\"'success'\">\n                    <fa-icon [icon]=\"faCheck\" >\n                    </fa-icon>\n                </span>\n                <span class=\"text-danger\" *ngSwitchCase=\"'failure'\">\n                    <fa-icon [icon]=\"faTimes\">\n                    </fa-icon>\n                </span>\n            </ng-container>\n        </ng-template>\n    </div>\n</div>\n\n" }]
     }], () => [{ type: i1$1.NgxNotyImpl }], { initData: [{
             type: Input
         }], columnNames: [{
@@ -939,7 +939,7 @@ class DataStagingComponent {
     constructor() { }
     ngOnInit() {
     }
-    static { this.ɵfac = function DataStagingComponent_Factory(t) { return new (t || DataStagingComponent)(); }; }
+    static { this.ɵfac = function DataStagingComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || DataStagingComponent)(); }; }
     static { this.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: DataStagingComponent, selectors: [["polp-data-staging"]], decls: 2, vars: 0, template: function DataStagingComponent_Template(rf, ctx) { if (rf & 1) {
             i0.ɵɵelementStart(0, "p");
             i0.ɵɵtext(1, "data-staging works!");
@@ -1079,7 +1079,7 @@ class DefineColumnMappingComponent extends DefaultFormBaseComponent {
         const id = this.mappings.controls[i].value.sourceId;
         return this.sourceColumns.find(a => a.id == id).label;
     }
-    static { this.ɵfac = function DefineColumnMappingComponent_Factory(t) { return new (t || DefineColumnMappingComponent)(i0.ɵɵdirectiveInject(i1$2.UntypedFormBuilder), i0.ɵɵdirectiveInject(i2$1.LoggerProviderImpl)); }; }
+    static { this.ɵfac = function DefineColumnMappingComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || DefineColumnMappingComponent)(i0.ɵɵdirectiveInject(i1$2.UntypedFormBuilder), i0.ɵɵdirectiveInject(i2$1.LoggerProviderImpl)); }; }
     static { this.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: DefineColumnMappingComponent, selectors: [["polp-define-column-mapping"]], inputs: { sourceColumns: "sourceColumns", targetColumns: "targetColumns", initValue: "initValue" }, features: [i0.ɵɵInheritDefinitionFeature], decls: 15, vars: 2, consts: [[3, "formGroup"], [1, "form-row", "mb-4"], [1, "col-1"], [1, "col-4"], [1, "col-3"], ["formArrayName", "mappings"], ["class", "form-row mb-4", 4, "ngFor", "ngForOf"], [3, "formGroupName"], [3, "innerHtml"], ["formControlName", "targetId", 1, "form-control", "form-control-sm"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"]], template: function DefineColumnMappingComponent_Template(rf, ctx) { if (rf & 1) {
             i0.ɵɵelementStart(0, "form", 0)(1, "div", 1)(2, "div", 2);
             i0.ɵɵtext(3, " # ");
@@ -1174,7 +1174,7 @@ class DropFileModalComponent extends ObservableModalAbstractComponent {
     close() {
         this.closeModal(null);
     }
-    static { this.ɵfac = function DropFileModalComponent_Factory(t) { return new (t || DropFileModalComponent)(i0.ɵɵdirectiveInject(i1$3.BsModalRef), i0.ɵɵdirectiveInject(i1$3.BsModalService)); }; }
+    static { this.ɵfac = function DropFileModalComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || DropFileModalComponent)(i0.ɵɵdirectiveInject(i1$3.BsModalRef), i0.ɵɵdirectiveInject(i1$3.BsModalService)); }; }
     static { this.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: DropFileModalComponent, selectors: [["polp-drop-file-modal"]], inputs: { multiple: "multiple", accept: "accept", maxFileSizeInBytes: "maxFileSizeInBytes" }, features: [i0.ɵɵInheritDefinitionFeature], decls: 16, vars: 6, consts: [["polpModalDraggable", "", 1, "modal-header"], [1, "modal-title"], ["type", "button", "aria-label", "Close", 1, "btn-close", 3, "click"], [1, "modal-body"], [3, "onFileDrop", "multiple", "accept"], ["ngx-file-drop-content-tmp", ""], [1, "file-previews"], ["class", "preview-item", 4, "ngFor", "ngForOf"], [1, "modal-footer"], ["type", "button", 1, "btn", "btn-secondary", 3, "click"], [1, "btn", "btn-primary", 3, "click", "disabled"], [1, "me-1", 3, "icon"], [1, "preview-item"], [3, "click"]], template: function DropFileModalComponent_Template(rf, ctx) { if (rf & 1) {
             i0.ɵɵelementStart(0, "div", 0)(1, "h4", 1);
             i0.ɵɵtext(2);
@@ -1488,7 +1488,7 @@ class ExportDataWizardComponent extends WizardAbstractComponent {
         }
         return data;
     }
-    static { this.ɵfac = function ExportDataWizardComponent_Factory(t) { return new (t || ExportDataWizardComponent)(); }; }
+    static { this.ɵfac = function ExportDataWizardComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || ExportDataWizardComponent)(); }; }
     static { this.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: ExportDataWizardComponent, selectors: [["polp-export-data-wizard"]], inputs: { columns: "columns", downloadAsync: "downloadAsync" }, features: [i0.ɵɵInheritDefinitionFeature], decls: 6, vars: 4, consts: [["exportLogs", ""], ["class", "card", 4, "ngIf"], [1, "d-flex", "mt-4", "mb-4"], ["type", "button", "class", "btn btn-warning", 3, "disabled", "click", 4, "ngIf"], [1, "me-auto"], ["type", "button", "class", "btn btn-primary", 3, "disabled", "click", 4, "ngIf"], [1, "card"], [1, "card-header", "h6"], [1, "badge", "rounded-pill", "bg-dark", "me-1"], [1, "card-body"], [3, "initData", "columnNames"], [4, "ngIf", "ngIfElse"], ["type", "button", 1, "btn", "btn-primary", "btn-lg", "btn-block", 3, "click"], ["theme", "dark", "title", "Data export logs", 3, "logStream", "animated", "icons"], ["type", "button", 1, "btn", "btn-warning", 3, "click", "disabled"], [3, "icon"], ["type", "button", 1, "btn", "btn-primary", 3, "click", "disabled"]], template: function ExportDataWizardComponent_Template(rf, ctx) { if (rf & 1) {
             i0.ɵɵtemplate(0, ExportDataWizardComponent_div_0_Template, 7, 3, "div", 1)(1, ExportDataWizardComponent_div_1_Template, 9, 3, "div", 1);
             i0.ɵɵelementStart(2, "div", 2);
@@ -1536,7 +1536,7 @@ class ExportWizardModalComponent {
     close() {
         this.bsModalRef.hide();
     }
-    static { this.ɵfac = function ExportWizardModalComponent_Factory(t) { return new (t || ExportWizardModalComponent)(i0.ɵɵdirectiveInject(i1$3.BsModalRef), i0.ɵɵdirectiveInject(i1$3.BsModalService)); }; }
+    static { this.ɵfac = function ExportWizardModalComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || ExportWizardModalComponent)(i0.ɵɵdirectiveInject(i1$3.BsModalRef), i0.ɵɵdirectiveInject(i1$3.BsModalService)); }; }
     static { this.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: ExportWizardModalComponent, selectors: [["polp-export-wizard-modal"]], inputs: { columns: "columns", downloadAsync: "downloadAsync" }, decls: 6, vars: 3, consts: [["polpModalDraggable", "", 1, "modal-header"], [1, "modal-title"], ["type", "button", "aria-label", "Close", 1, "btn-close", 3, "click"], [1, "modal-body"], [3, "columns", "downloadAsync"]], template: function ExportWizardModalComponent_Template(rf, ctx) { if (rf & 1) {
             i0.ɵɵelementStart(0, "div", 0)(1, "h4", 1);
             i0.ɵɵtext(2);
@@ -1886,7 +1886,7 @@ class ImportDataWizardComponent extends WizardAbstractComponent {
         this.importStat.success = evt.success;
         this.importStat.failure = evt.failure;
     }
-    static { this.ɵfac = function ImportDataWizardComponent_Factory(t) { return new (t || ImportDataWizardComponent)(i0.ɵɵdirectiveInject(i1$1.NgxNotyImpl)); }; }
+    static { this.ɵfac = function ImportDataWizardComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || ImportDataWizardComponent)(i0.ɵɵdirectiveInject(i1$1.NgxNotyImpl)); }; }
     static { this.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: ImportDataWizardComponent, selectors: [["polp-import-data-wizard"]], inputs: { file: "file", targetColumns: "targetColumns", uploadAsync: "uploadAsync" }, features: [i0.ɵɵInheritDefinitionFeature], decls: 8, vars: 6, consts: [["class", "card", 4, "ngIf"], [1, "d-flex", "mt-4", "mb-4"], ["type", "button", "class", "btn btn-warning", 3, "disabled", "click", 4, "ngIf"], [1, "me-auto"], ["type", "button", "class", "btn btn-primary", 3, "disabled", "click", 4, "ngIf"], [1, "card"], [1, "card-header", "h6"], [1, "badge", "rounded-pill", "bg-dark", "me-1"], [1, "card-body"], [3, "onReset", "dataChange", "initData", "columnNames"], [3, "onValueChanged", "onValidation", "sourceColumns", "targetColumns", "initValue"], [3, "onImport", "afterImport", "columnNames", "uploadAsync", "initData"], ["type", "button", 1, "btn", "btn-warning", 3, "click", "disabled"], [3, "icon"], ["type", "button", 1, "btn", "btn-primary", 3, "click", "disabled"]], template: function ImportDataWizardComponent_Template(rf, ctx) { if (rf & 1) {
             i0.ɵɵtemplate(0, ImportDataWizardComponent_div_0_Template, 7, 3, "div", 0)(1, ImportDataWizardComponent_div_1_Template, 7, 4, "div", 0)(2, ImportDataWizardComponent_div_2_Template, 7, 3, "div", 0)(3, ImportDataWizardComponent_div_3_Template, 7, 4, "div", 0);
             i0.ɵɵelementStart(4, "div", 1);
@@ -1945,7 +1945,7 @@ class ImportWizardModalComponent {
         }
         this.bsModalRef.hide();
     }
-    static { this.ɵfac = function ImportWizardModalComponent_Factory(t) { return new (t || ImportWizardModalComponent)(i0.ɵɵdirectiveInject(i1$3.BsModalRef), i0.ɵɵdirectiveInject(i1$3.BsModalService)); }; }
+    static { this.ɵfac = function ImportWizardModalComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || ImportWizardModalComponent)(i0.ɵɵdirectiveInject(i1$3.BsModalRef), i0.ɵɵdirectiveInject(i1$3.BsModalService)); }; }
     static { this.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: ImportWizardModalComponent, selectors: [["polp-import-wizard-modal"]], viewQuery: function ImportWizardModalComponent_Query(rf, ctx) { if (rf & 1) {
             i0.ɵɵviewQuery(_c0, 7);
         } if (rf & 2) {
@@ -2052,7 +2052,7 @@ Please select one table question or none.
         });
         return lastValueFrom(modalRef.content.result);
     }
-    static { this.ɵfac = function ModalUtilsService_Factory(t) { return new (t || ModalUtilsService)(i0.ɵɵinject(i1$3.BsModalService)); }; }
+    static { this.ɵfac = function ModalUtilsService_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || ModalUtilsService)(i0.ɵɵinject(i1$3.BsModalService)); }; }
     static { this.ɵprov = /*@__PURE__*/ i0.ɵɵdefineInjectable({ token: ModalUtilsService, factory: ModalUtilsService.ɵfac, providedIn: 'root' }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ModalUtilsService, [{
@@ -2063,7 +2063,7 @@ Please select one table question or none.
     }], () => [{ type: i1$3.BsModalService }], null); })();
 
 class PolpDataTransportModule {
-    static { this.ɵfac = function PolpDataTransportModule_Factory(t) { return new (t || PolpDataTransportModule)(); }; }
+    static { this.ɵfac = function PolpDataTransportModule_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || PolpDataTransportModule)(); }; }
     static { this.ɵmod = /*@__PURE__*/ i0.ɵɵdefineNgModule({ type: PolpDataTransportModule }); }
     static { this.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ imports: [CommonModule,
             FormsModule,
